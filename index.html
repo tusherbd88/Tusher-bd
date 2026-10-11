@@ -1,10 +1,132 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-  <title>Tusher bd</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tusher BD | Personal Website</title>
+  <meta name="description" content="Welcome to Tusher BD's personal website.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #f8fafc;
+      line-height: 1.7;
+    }
+    header {
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      background: #11182b;
+    }
+    .logo { font-size: 23px; font-weight: bold; color: #67e8f9; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; }
+    nav a:hover { color: #67e8f9; }
+    .hero {
+      min-height: 65vh;
+      padding: 75px 7%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background: radial-gradient(ellipse at top right, #164e63, #0b1020 65%);
+    }
+    .tag { color: #67e8f9; font-weight: bold; }
+    h1 { font-size: clamp(38px, 8vw, 65px); line-height: 1.2; margin: 15px 0; }
+    h1 span { color: #67e8f9; }
+    .hero p { max-width: 560px; color: #cbd5e1; margin-bottom: 25px; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 9px;
+      background: #06b6d4; color: #07111f; text-decoration: none;
+      font-weight: bold;
+    }
+    section { padding: 60px 7%; }
+    h2 { font-size: 30px; margin-bottom: 20px; }
+    .about p { color: #cbd5e1; max-width: 700px; }
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px; margin-top: 25px;
+    }
+    .card {
+      background: #151e33; border: 1px solid #26344f;
+      border-radius: 14px; padding: 24px;
+    }
+    .card h3 { color: #67e8f9; margin-bottom: 10px; }
+    .card p { color: #cbd5e1; }
+    .contact { background: #11182b; }
+    footer { text-align: center; padding: 22px; color: #94a3b8; }
+    @media (max-width: 480px) {
+      header { padding: 16px 5%; }
+      nav { gap: 12px; font-size: 14px; }
+      .hero { padding: 65px 6%; }
+      section { padding: 45px 6%; }
+    }
+  </style>
 </head>
 <body>
-  <h1>স্বাগতম!</h1>
-  <p>Tusher bd</p>
+  <header>
+    <div class="logo">Tusher BD.</div>
+    <nav>
+      <a href="#home">হোম</a>
+      <a href="#about">পরিচিতি</a>
+      <a href="#work">আমার কাজ</a>
+      <a href="#contact">যোগাযোগ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="tag">আমার ব্যক্তিগত ওয়েবসাইট</div>
+      <h1>স্বাগতম!<br>আমি <span>Tusher BD</span></h1>
+      <p>
+        এটি আমার নিজের ওয়েবসাইট। এখানে আমার পরিচিতি,
+        শেখার যাত্রা এবং ভবিষ্যতের কাজ তুলে ধরব।
+      </p>
+      <a class="btn" href="#about">আমার সম্পর্কে জানুন →</a>
+    </section>
+
+    <section class="about" id="about">
+      <h2>আমার পরিচিতি</h2>
+      <p>
+        আমি নতুন নতুন ডিজিটাল দক্ষতা শিখছি এবং নিজের
+        ওয়েবসাইট তৈরি করছি। প্রতিদিন নতুন কিছু শেখা
+        ও নিজের কাজ উন্নত করাই আমার লক্ষ্য।
+      </p>
+    </section>
+
+    <section id="work">
+      <h2>আমার কাজ</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>ওয়েব ডিজাইন</h3>
+          <p>সহজ, সুন্দর ও মোবাইল-ফ্রেন্ডলি ওয়েবসাইট তৈরি শেখা।</p>
+        </div>
+        <div class="card">
+          <h3>নতুন দক্ষতা</h3>
+          <p>প্রযুক্তি ও ডিজিটাল কাজের মাধ্যমে নতুন অভিজ্ঞতা অর্জন।</p>
+        </div>
+        <div class="card">
+          <h3>আমার প্রজেক্ট</h3>
+          <p>এখানে ভবিষ্যতে আমার তৈরি প্রজেক্টগুলো যোগ করব।</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>যোগাযোগ</h2>
+      <p>আমার যোগাযোগের তথ্য শিগগিরই এখানে যোগ করা হবে।</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Tusher BD. সর্বস্বত্ব সংরক্ষিত।
+  </footer>
 </body>
 </html>
