@@ -526,4 +526,47 @@
         }
 
         function closeTrailer() {
-            document.getElementById('trailerFrame
+            document.getElementById('trailerFrame').src = '';
+            document.getElementById('videoModal').style.display = 'none';
+        }
+
+        function submitRequest(e) {
+            e.preventDefault();
+            const movieName = document.getElementById('reqInput').value;
+            alert('ধন্যবাদ! "' + movieName + '" মুভির অফিশিয়াল ট্রেইলার রিকোয়েস্ট গ্রহণ করা হয়েছে।');
+            document.getElementById('reqInput').value = '';
+        }
+
+        function changeLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            if(lang === 'en') {
+                document.getElementById('txtHome').innerText = "Home";
+                document.getElementById('txtMovies').innerText = "Movies";
+                document.getElementById('txtRequest').innerText = "Request";
+                document.getElementById('txtCatTitle').innerText = "Popular Official Trailers Collection";
+                document.getElementById('heroTitle').innerText = "Toofan - Official Trailer";
+                document.getElementById('heroDesc').innerText = "A story of the rise and rule of a 90s gangster featuring Shakib Khan & Chanchal Chowdhury!";
+                document.getElementById('txtReqTitle').innerText = "Request a Movie Trailer";
+                document.getElementById('txtReqDesc').innerText = "Type the name of the movie trailer you want to watch.";
+                document.getElementById('reqInput').placeholder = "Enter movie name...";
+                document.getElementById('btnSubmit').innerText = "Submit";
+                document.getElementById('txtFooter').innerText = "Connect with us on social media:";
+            } else if(lang === 'bng') {
+                document.getElementById('txtHome').innerText = "Home";
+                document.getElementById('txtMovies').innerText = "Cinema";
+                document.getElementById('txtRequest').innerText = "Request";
+                document.getElementById('txtCatTitle').innerText = "Popular Official Trailer Collection";
+                document.getElementById('heroTitle').innerText = "Toofan - Official Trailer";
+                document.getElementById('heroDesc').innerText = "90s er ek gangster er utthan o rajotter golpo. Shakib Khan o Chanchal Chowdhury!";
+                document.getElementById('txtReqTitle').innerText = "Movie Trailer Request Korun";
+                document.getElementById('txtReqDesc').innerText = "Apni je movie trailer dekhte chan tar naam likhe submit korun.";
+                document.getElementById('reqInput').placeholder = "Movie er naam likhun...";
+                document.getElementById('btnSubmit').innerText = "Pathan";
+                document.getElementById('txtFooter').innerText = "Amader sathe social media te jukto thakun:";
+            } else {
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
