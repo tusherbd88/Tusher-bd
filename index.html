@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tusher BD - Movie Portal</title>
-    <!-- Fonts & Icons -->
+    <title>Tusher BD - Official Movie Portal</title>
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        :root {
+            --primary: #e50914;
+            --accent: #38bdf8;
+            --bg-dark: #0b0f19;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -17,8 +25,8 @@
         }
 
         body {
-            background-color: #0b0f19;
-            color: #f8fafc;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             line-height: 1.6;
         }
 
@@ -30,13 +38,19 @@
             justify-content: space-between;
             align-items: center;
             font-size: 13px;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .clock-box {
             color: #ff2222;
             font-weight: 700;
             white-space: nowrap;
+            font-size: 14px;
+        }
+
+        .clock-box i {
+            color: #ff2222;
+            margin-right: 5px;
         }
 
         .moving-movies {
@@ -44,13 +58,13 @@
             margin: 0 15px;
             overflow: hidden;
             white-space: nowrap;
-            color: #38bdf8;
+            color: var(--accent);
             font-weight: 600;
         }
 
         /* Navbar */
         header {
-            background: #0b0f19;
+            background: rgba(11, 15, 25, 0.95);
             padding: 12px 5%;
             display: flex;
             justify-content: space-between;
@@ -64,11 +78,11 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            color: #38bdf8;
+            color: var(--accent);
             text-decoration: none;
         }
 
-        .logo span { color: #e50914; }
+        .logo span { color: var(--primary); }
 
         .nav-links {
             display: flex;
@@ -84,17 +98,37 @@
             cursor: pointer;
         }
 
-        .nav-links a:hover { color: #38bdf8; }
+        .nav-links a:hover { color: var(--accent); }
 
-        /* Hero Banner */
-        .hero {
-            padding: 35px 5%;
-            background: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.9)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
+        /* Top Slider / Hero Section */
+        .hero-slider-container {
+            position: relative;
+            overflow: hidden;
             border-bottom: 1px solid #1e293b;
         }
 
+        .hero-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .hero-slide {
+            min-width: 100%;
+            padding: 40px 5%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
         .badge {
-            background: #e50914;
+            background: var(--primary);
             color: #fff;
             padding: 3px 10px;
             border-radius: 4px;
@@ -103,7 +137,7 @@
         }
 
         .hero h1 {
-            font-size: 26px;
+            font-size: 28px;
             margin: 10px 0;
             color: #fff;
         }
@@ -115,7 +149,7 @@
         }
 
         .hero-btn {
-            background: #e50914;
+            background: var(--primary);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -128,65 +162,68 @@
             gap: 6px;
         }
 
-        /* Movie Section & Slider */
-        main { padding: 25px 5%; }
-
-        .section-header {
+        /* Hero Slider Controls */
+        .hero-controls {
+            position: absolute;
+            bottom: 15px;
+            right: 5%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
+            gap: 10px;
+            z-index: 10;
         }
 
-        .section-title {
-            border-left: 4px solid #38bdf8;
-            padding-left: 10px;
-            font-size: 18px;
-            color: #fff;
-        }
-
-        .slider-controls {
-            display: flex;
-            gap: 8px;
-        }
-
-        .slide-arrow {
-            background: #1e293b;
+        .hero-arrow {
+            background: rgba(15, 23, 42, 0.8);
             color: #fff;
             border: 1px solid #334155;
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            transition: 0.3s;
         }
 
-        .movie-slider {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding-bottom: 15px;
+        .hero-arrow:hover {
+            background: var(--primary);
+            border-color: var(--primary);
         }
 
-        .movie-slider::-webkit-scrollbar { display: none; }
+        /* Movie Section (Fixed Grid) */
+        main { padding: 30px 5%; }
+
+        .section-title {
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+            font-size: 20px;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 18px;
+        }
 
         .movie-card {
-            min-width: 160px;
-            width: 160px;
-            background: #1e293b;
+            background: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid #334155;
             cursor: pointer;
-            flex-shrink: 0;
+            transition: 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
         }
 
         .movie-card img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
             display: block;
         }
@@ -194,7 +231,7 @@
         .movie-info { padding: 10px; }
 
         .movie-info h3 {
-            font-size: 14px;
+            font-size: 15px;
             color: #fff;
             margin-bottom: 4px;
             white-space: nowrap;
@@ -209,12 +246,36 @@
             color: #94a3b8;
         }
 
-        /* Request Form */
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0 10px;
+        }
+
+        .page-btn {
+            background: #0f172a;
+            color: #fff;
+            border: 1px solid #334155;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .page-btn.active, .page-btn:hover {
+            background: var(--accent);
+            color: #020617;
+            border-color: var(--accent);
+        }
+
+        /* Request Section */
         .request-section {
             background: #0f172a;
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
-            margin: 20px 5%;
+            margin: 30px 5%;
             border: 1px solid #1e293b;
             text-align: center;
         }
@@ -237,7 +298,7 @@
         }
 
         .request-form button {
-            background: #e50914;
+            background: var(--primary);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -246,7 +307,7 @@
             font-weight: bold;
         }
 
-        /* Modals */
+        /* Popup Modals */
         .modal {
             display: none;
             position: fixed;
@@ -265,7 +326,8 @@
             border-radius: 12px;
             position: relative;
             padding: 25px;
-            border: 1px solid #38bdf8;
+            border: 1px solid var(--accent);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
         }
 
         .close-btn {
@@ -278,25 +340,25 @@
         }
 
         .contact-popup-title {
-            color: #38bdf8;
-            font-size: 18px;
+            color: var(--accent);
+            font-size: 20px;
             margin-bottom: 15px;
-            border-bottom: 2px solid #e50914;
+            border-bottom: 2px solid var(--primary);
             padding-bottom: 5px;
         }
 
         .contact-list { list-style: none; text-align: left; }
 
         .contact-list li {
-            margin-bottom: 12px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            font-size: 15px;
             color: #cbd5e1;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .contact-list i { color: #e50914; width: 20px; }
+        .contact-list i { color: var(--primary); font-size: 18px; width: 25px; }
 
         .map-btn {
             display: inline-flex;
@@ -317,7 +379,7 @@
             background: #020617;
             padding: 20px 5%;
             border-top: 1px solid #1e293b;
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
             font-size: 12px;
             color: #64748b;
@@ -326,10 +388,10 @@
 </head>
 <body>
 
-    <!-- Header Bar -->
+    <!-- Header Bar with Clock & Moving Movie Marquee -->
     <div class="top-bar">
         <div class="clock-box">
-            <i class="fa-regular fa-clock"></i> <span id="liveClock">00:00:00 AM</span>
+            <i class="fa-regular fa-clock"></i><span id="liveClock">00:00:00 AM</span>
         </div>
         <div class="moving-movies">
             <marquee behavior="scroll" direction="left" scrollamount="4">
@@ -338,7 +400,7 @@
         </div>
     </div>
 
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <header>
         <a href="#" class="logo">TUSHER <span>BD</span></a>
         <ul class="nav-links">
@@ -349,29 +411,59 @@
         </ul>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div>
-            <span class="badge">ট্রেন্ডিং এক্সক্লুসিভ</span>
-            <h1>তুফান (Toofan) - অফিশিয়াল ট্রেইলার</h1>
-            <p>নব্বই দশকের এক গ্যাংস্টারের উত্থান ও রাজত্বের রোমাঞ্চকর গল্প। শাকিব খান ও চঞ্চল চৌধুরীর দুর্দান্ত অ্যাকশন উপভোগ করুন!</p>
-            <button class="hero-btn" onclick="playTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')">
-                <i class="fa-solid fa-play"></i> ট্রেইলার দেখুন
-            </button>
+    <!-- Top Hero Banner Slider -->
+    <section class="hero-slider-container">
+        <div class="hero-slider" id="heroSlider">
+            <!-- Slide 1: Toofan -->
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80');">
+                <div class="hero-content">
+                    <span class="badge">ট্রেন্ডিং এক্সক্লুসিভ</span>
+                    <h1>তুফান (Toofan) - অফিশিয়াল ট্রেইলার</h1>
+                    <p>নব্বই দশকের এক গ্যাংস্টারের উত্থান ও রাজত্বের রোমাঞ্চকর গল্প। শাকিব খান ও চঞ্চল চৌধুরীর দুর্দান্ত অ্যাকশন উপভোগ করুন!</p>
+                    <button class="hero-btn" onclick="playTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')">
+                        <i class="fa-solid fa-play"></i> ট্রেইলার দেখুন
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slide 2: Jawan -->
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=1200&q=80');">
+                <div class="hero-content">
+                    <span class="badge">হাইপড ট্রেইলার</span>
+                    <h1>জাওয়ান (Jawan) - অফিশিয়াল ট্রেইলার</h1>
+                    <p>শাহরুখ খানের এক অসাধারণ অ্যাকশন থ্রিলার চলচ্চিত্র। সমাজ পরিবর্তনের এক রোমাঞ্চকর মিশন নিয়ে নির্মিত!</p>
+                    <button class="hero-btn" onclick="playTrailer('https://www.youtube.com/embed/5lcGxJvOKus')">
+                        <i class="fa-solid fa-play"></i> ট্রেইলার দেখুন
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slide 3: Pushpa 2 -->
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1200&q=80');">
+                <div class="hero-content">
+                    <span class="badge">মেগা ব্লকবাস্টার</span>
+                    <h1>পুস্পা ২ (Pushpa 2: The Rule)</h1>
+                    <p>অল্লু অর্জুনের বহুল প্রতীক্ষিত অ্যাকশন মুভি। পুষ্পার রাজত্ব ও নতুন লড়াইয়ের রোমাঞ্চকর ট্রেইলার দেখে নিন!</p>
+                    <button class="hero-btn" onclick="playTrailer('https://www.youtube.com/embed/r588USiDBMc')">
+                        <i class="fa-solid fa-play"></i> ট্রেইলার দেখুন
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Arrow Controls -->
+        <div class="hero-controls">
+            <button class="hero-arrow" onclick="prevHeroSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="hero-arrow" onclick="nextHeroSlide()"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </section>
 
-    <!-- Movie Slider Section -->
+    <!-- Movies Grid Section (Icons/Cards below stay as GRID) -->
     <main id="movies">
-        <div class="section-header">
-            <h2 class="section-title">জনপ্রিয় অফিশিয়াল মুভি কালেকশন</h2>
-            <div class="slider-controls">
-                <button class="slide-arrow" onclick="scrollSlider(-200)"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="slide-arrow" onclick="scrollSlider(200)"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-        </div>
+        <h2 class="section-title">জনপ্রিয় অফিশিয়াল মুভি ট্রেইলার কালেকশন</h2>
         
-        <div class="movie-slider" id="movieSlider">
+        <div class="movie-grid" id="movieGrid">
+            <!-- Initial Page 1 Cards -->
             <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')">
                 <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80" alt="Toofan">
                 <div class="movie-info">
@@ -400,20 +492,13 @@
                     <div class="movie-meta"><span>★ 8.7</span><span>2022 • South</span></div>
                 </div>
             </div>
-            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/Dydmpej652A')">
-                <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80" alt="Animal">
-                <div class="movie-info">
-                    <h3>অ্যানিম্যাল (Animal)</h3>
-                    <div class="movie-meta"><span>★ 8.1</span><span>2023 • Hindi</span></div>
-                </div>
-            </div>
-            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/vqu4z34wENw')">
-                <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&q=80" alt="Pathaan">
-                <div class="movie-info">
-                    <h3>পাঠান (Pathaan)</h3>
-                    <div class="movie-meta"><span>★ 8.0</span><span>2023 • Hindi</span></div>
-                </div>
-            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn active" id="p1" onclick="changePage(1)">১</button>
+            <button class="page-btn" id="p2" onclick="changePage(2)">২</button>
+            <button class="page-btn" id="p3" onclick="changePage(3)">৩</button>
         </div>
     </main>
 
@@ -427,82 +512,33 @@
         </form>
     </div>
 
-    <!-- Video Modal -->
+    <!-- Video Popup Modal -->
     <div class="modal" id="videoModal">
         <div class="modal-content" style="max-width: 700px; padding: 0; background: #000;">
-            <span class="close-btn" onclick="closeVideoModal()" style="top:-35px; right:0;">&times;</span>
+            <span class="close-btn" onclick="closeVideoModal()" style="top: -35px; right: 0;">&times;</span>
             <iframe id="trailerFrame" width="100%" height="380" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
         </div>
     </div>
 
-    <!-- Contact Modal -->
+    <!-- Contact Popup Modal -->
     <div class="modal" id="contactModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeContactModal()">&times;</span>
             <h3 class="contact-popup-title"><i class="fa-solid fa-address-card"></i> যোগাযোগের ঠিকানা</h3>
             <ul class="contact-list">
-                <li><i class="fa-solid fa-location-dot"></i><div><strong>ঠিকানা:</strong><br>গয়েশপুর রথখোলা, পাবনা</div></li>
-                <li><i class="fa-solid fa-phone"></i><div><strong>ফোন:</strong><br><a href="tel:01728170476" style="color: #38bdf8; text-decoration: none;">01728170476</a></div></li>
-                <li><i class="fa-solid fa-envelope"></i><div><strong>ইমেইল:</strong><br><a href="mailto:tusherbd143@gmail.com" style="color: #38bdf8; text-decoration: none;">tusherbd143@gmail.com</a></div></li>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div><strong>ঠিকানা:</strong><br>গয়েশপুর রথখোলা, পাবনা</div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <div><strong>ফোন:</strong><br><a href="tel:01728170476" style="color: var(--accent); text-decoration: none;">01728170476</a></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <div><strong>ইমেইল:</strong><br><a href="mailto:tusherbd143@gmail.com" style="color: var(--accent); text-decoration: none;">tusherbd143@gmail.com</a></div>
+                </li>
             </ul>
+
             <a href="https://maps.google.com/?q=Goyeshpur+Rathkhola+Pabna" target="_blank" class="map-btn">
-                <i class="fa-solid fa-map-location-dot"></i> গুগল ম্যাপে ঠিকানা দেখুন
-            </a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 <strong>Tusher BD Movie Portal</strong> | সর্বস্বত্ব সংরক্ষিত</p>
-    </footer>
-
-    <!-- Safe Script -->
-    <script>
-        function updateClock() {
-            var now = new Date();
-            var h = now.getHours();
-            var m = now.getMinutes();
-            var s = now.getSeconds();
-            var ampm = h >= 12 ? 'PM' : 'AM';
-            h = h % 12; h = h ? h : 12;
-            h = h < 10 ? '0' + h : h;
-            m = m < 10 ? '0' + m : m;
-            s = s < 10 ? '0' + s : s;
-            var el = document.getElementById('liveClock');
-            if (el) el.innerText = h + ':' + m + ':' + s + ' ' + ampm;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        function scrollSlider(val) {
-            var el = document.getElementById('movieSlider');
-            if(el) el.scrollBy({ left: val, behavior: 'smooth' });
-        }
-
-        function openContactModal() {
-            document.getElementById('contactModal').style.display = 'flex';
-        }
-
-        function closeContactModal() {
-            document.getElementById('contactModal').style.display = 'none';
-        }
-
-        function playTrailer(url) {
-            document.getElementById('trailerFrame').src = url + "?autoplay=1";
-            document.getElementById('videoModal').style.display = 'flex';
-        }
-
-        function closeVideoModal() {
-            document.getElementById('trailerFrame').src = '';
-            document.getElementById('videoModal').style.display = 'none';
-        }
-
-        function submitRequest(e) {
-            e.preventDefault();
-            var val = document.getElementById('reqInput').value;
-            alert('ধন্যবাদ! "' + val + '" মুভির রিকোয়েস্ট গ্রহণ করা হয়েছে।');
-            document.getElementById('reqInput').value = '';
-        }
-    </script>
-</body>
-</html>
+                <i class="fa-solid fa-map-location-dot"></i> গুগল ম্যাপ
