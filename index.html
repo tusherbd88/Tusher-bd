@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tusher BD - Premium Movie Portal</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Tusher BD - Official Movie Portal</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #e50914; /* Netflix Red */
-            --accent: #38bdf8;  /* Neon Blue */
-            --bg-dark: #070a12;
-            --card-bg: rgba(30, 41, 59, 0.7);
+            --primary: #e50914;
+            --accent: #38bdf8;
+            --bg-dark: #0b0f19;
+            --card-bg: #1e293b;
             --text-light: #f8fafc;
         }
 
@@ -21,7 +21,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            font-family: 'Hind Siliguri', sans-serif;
         }
 
         body {
@@ -31,7 +31,7 @@
             overflow-x: hidden;
         }
 
-        /* Top Header Bar */
+        /* Header Bar */
         .top-bar {
             background: #020617;
             padding: 8px 5%;
@@ -44,60 +44,42 @@
 
         .clock-box {
             color: var(--accent);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            font-weight: bold;
         }
 
         .top-contact {
             color: #cbd5e1;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            font-size: 12px;
         }
 
         .top-contact i { color: var(--primary); }
 
-        .lang-select {
-            background: #0f172a;
-            color: #fff;
-            border: 1px solid #334155;
-            padding: 3px 8px;
-            border-radius: 4px;
-            outline: none;
-            cursor: pointer;
-        }
-
         /* Header / Navbar */
         header {
-            background: rgba(7, 10, 18, 0.9);
-            padding: 15px 5%;
+            background: rgba(11, 15, 25, 0.95);
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid #1e293b;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(15px);
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 800;
             color: var(--accent);
             text-decoration: none;
-            letter-spacing: 1px;
-            text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
         }
 
-        .logo span { color: var(--primary); text-shadow: 0 0 12px rgba(229, 9, 20, 0.4); }
+        .logo span { color: var(--primary); }
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             list-style: none;
         }
 
@@ -105,146 +87,88 @@
             color: #e2e8f0;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.3s;
+            font-size: 14px;
         }
 
-        .nav-links a:hover { color: var(--accent); }
-
-        /* Hero Cinema Banner */
+        /* Hero Banner */
         .hero {
-            padding: 60px 5%;
-            background: linear-gradient(90deg, rgba(7, 10, 18, 0.95) 0%, rgba(7, 10, 18, 0.6) 100%), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .hero-content {
-            max-width: 650px;
+            padding: 40px 5%;
+            background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
+            border-bottom: 1px solid #1e293b;
         }
 
         .badge {
             background: var(--primary);
             color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
+            padding: 3px 10px;
+            border-radius: 4px;
             font-size: 12px;
             font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
         }
 
         .hero h1 {
-            font-size: 38px;
-            margin: 12px 0;
+            font-size: 28px;
+            margin: 10px 0;
             color: #fff;
-            font-weight: 700;
-            line-height: 1.2;
         }
 
         .hero p {
             color: #94a3b8;
-            font-size: 15px;
-            margin-bottom: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
         .hero-btn {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
-            transition: 0.3s;
+            font-size: 14px;
         }
 
-        .hero-btn:hover {
-            transform: scale(1.05);
-            background: #ff121d;
-        }
-
-        /* Movie Section */
-        main { padding: 40px 5%; }
+        /* Movie Grid */
+        main { padding: 30px 5%; }
 
         .section-title {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-left: 4px solid var(--accent);
-            padding-left: 12px;
-            font-size: 24px;
-            font-weight: 700;
+            padding-left: 10px;
+            font-size: 20px;
         }
 
         .movie-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 18px;
         }
 
         .movie-card {
             background: var(--card-bg);
-            border-radius: 14px;
+            border-radius: 10px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
+            border: 1px solid #334155;
             cursor: pointer;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .movie-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--accent);
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+            transition: 0.3s;
         }
 
         .movie-card img {
             width: 100%;
-            height: 300px;
+            height: 240px;
             object-fit: cover;
             display: block;
         }
 
-        .play-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 300px;
-            background: rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: 0.3s;
-        }
-
-        .movie-card:hover .play-overlay {
-            opacity: 1;
-        }
-
-        .play-btn-icon {
-            background: var(--primary);
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
-        }
-
         .movie-info {
-            padding: 15px;
+            padding: 10px;
         }
 
         .movie-info h3 {
-            font-size: 17px;
+            font-size: 15px;
             color: #fff;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -253,7 +177,7 @@
         .movie-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 13px;
+            font-size: 11px;
             color: #94a3b8;
         }
 
@@ -261,50 +185,47 @@
         .pagination {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin: 40px 0 10px;
+            gap: 10px;
+            margin: 30px 0 10px;
         }
 
         .page-btn {
             background: #0f172a;
             color: #fff;
             border: 1px solid #334155;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 15px;
-            transition: 0.3s;
         }
 
         .page-btn.active, .page-btn:hover {
             background: var(--accent);
             color: #020617;
             border-color: var(--accent);
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
         }
 
         /* Movie Request Section */
         .request-section {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-            padding: 35px;
-            border-radius: 16px;
-            margin: 40px 5%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #0f172a;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 5%;
+            border: 1px solid #1e293b;
             text-align: center;
         }
 
         .request-form {
             display: flex;
-            gap: 12px;
-            max-width: 500px;
-            margin: 20px auto 0;
+            gap: 10px;
+            max-width: 450px;
+            margin: 15px auto 0;
         }
 
         .request-form input {
             flex: 1;
-            padding: 12px 18px;
-            border-radius: 30px;
+            padding: 10px 15px;
+            border-radius: 20px;
             border: 1px solid #334155;
             background: #020617;
             color: #fff;
@@ -315,19 +236,19 @@
             background: var(--primary);
             color: #fff;
             border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
         }
 
-        /* Video Modal */
+        /* Trailer Modal */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.92);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -335,96 +256,69 @@
 
         .modal-content {
             width: 90%;
-            max-width: 750px;
+            max-width: 700px;
             background: #000;
-            border-radius: 12px;
+            border-radius: 10px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
         }
 
         .close-btn {
             position: absolute;
-            top: -38px;
+            top: -35px;
             right: 0;
             color: #fff;
-            font-size: 32px;
+            font-size: 30px;
             cursor: pointer;
         }
 
-        /* Gorgeous Footer */
+        /* Footer */
         footer {
             background: #020617;
-            padding: 40px 5% 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 50px;
+            padding: 30px 5% 20px;
+            border-top: 1px solid #1e293b;
+            margin-top: 40px;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-            text-align: left;
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-box {
+            flex: 1;
+            min-width: 250px;
         }
 
         .footer-box h4 {
             color: var(--accent);
-            font-size: 18px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--primary);
-            display: inline-block;
-            padding-bottom: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
         }
 
         .footer-box p, .footer-box li {
             color: #94a3b8;
-            font-size: 14px;
-            margin-bottom: 10px;
+            font-size: 13px;
+            margin-bottom: 8px;
             list-style: none;
         }
 
-        .footer-box i {
-            color: var(--primary);
-            margin-right: 8px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .social-icons a {
-            color: #fff;
-            background: #1e293b;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            background: var(--primary);
-            transform: scale(1.1);
-        }
+        .footer-box i { color: var(--primary); margin-right: 6px; }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 13px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 12px;
             color: #64748b;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
+    <!-- Header Bar -->
     <div class="top-bar">
         <div class="clock-box">
             <i class="fa-regular fa-clock"></i> <span id="liveClock">00:00:00 AM</span>
@@ -432,42 +326,23 @@
         <a href="tel:01728170476" class="top-contact">
             <i class="fa-solid fa-phone"></i> 01728170476
         </a>
-        <div>
-            <i class="fa-solid fa-globe"></i> 
-            <select class="lang-select" id="langSelect" onchange="changeLanguage()">
-                <option value="bn">বাংলা (Bengali)</option>
-                <option value="en">English</option>
-                <option value="bng">Banglish</option>
-            </select>
-        </div>
     </div>
 
-    <!-- Header -->
+    <!-- Main Navigation -->
     <header>
         <a href="#" class="logo">TUSHER <span>BD</span></a>
         <ul class="nav-links">
-            <li><a href="#" id="txtHome">হোম</a></li>
-            <li><a href="#movies" id="txtMovies">সিনেমা</a></li>
-            <li><a href="#request" id="txtRequest">রিকোয়েস্ট</a></li>
-            <li><a href="#contact" id="txtContact">যোগাযোগ</a></li>
+            <li><a href="#">হোম</a></li>
+            <li><a href="#movies">সিনেমা</a></li>
+            <li><a href="#request">রিকোয়েস্ট</a></li>
+            <li><a href="#contact">যোগাযোগ</a></li>
         </ul>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Banner -->
     <section class="hero">
-        <div class="hero-content">
+        <div>
             <span class="badge">ট্রেন্ডিং এক্সক্লুসিভ</span>
-            <h1 id="heroTitle">তুফান (Toofan) - অফিশিয়াল ট্রেইলার</h1>
-            <p id="heroDesc">নব্বই দশকের এক গ্যাংস্টারের উত্থান ও রাজত্বের রোমাঞ্চকর গল্প। শাকিব খান ও চঞ্চল চৌধুরীর দুর্দান্ত অ্যাকশন উপভোগ করুন!</p>
+            <h1>তুফান (Toofan) - অফিশিয়াল ট্রেইলার</h1>
+            <p>নব্বই দশকের এক গ্যাংস্টারের উত্থান ও রাজত্বের রোমাঞ্চকর গল্প। শাকিব খান ও চঞ্চল চৌধুরীর দুর্দান্ত অ্যাকশন উপভোগ করুন!</p>
             <button class="hero-btn" onclick="openTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')">
-                <i class="fa-solid fa-play"></i> ট্রেইলার প্লে করুন
-            </button>
-        </div>
-    </section>
-
-    <!-- Movie Section -->
-    <main id="movies">
-        <h2 class="section-title" id="txtCatTitle">জনপ্রিয় অফিশিয়াল মুভি ট্রেইলার কালেকশন</h2>
-        
-        <div class="movie-grid" id="movieGrid">
-            
