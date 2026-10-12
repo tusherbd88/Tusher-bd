@@ -94,22 +94,10 @@
 
         .nav-links a:hover { color: var(--accent); }
 
-        /* Banner Ad */
-        .ad-banner {
-            width: 90%;
-            margin: 15px auto;
-            background: linear-gradient(45deg, #1e1b4b, #311b92);
-            border: 1px dashed var(--accent);
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-            color: #f1f5f9;
-        }
-
-        /* Hero Carousel/Featured */
+        /* Hero Section */
         .hero {
-            padding: 40px 5%;
-            background: linear-gradient(to right, rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.7)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: 50px 5%;
+            background: linear-gradient(to right, rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.7)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
             border-radius: 0 0 20px 20px;
         }
 
@@ -131,43 +119,18 @@
             font-weight: bold;
         }
 
-        /* Filter Tabs */
-        .filter-tabs {
-            display: flex;
-            gap: 10px;
-            margin: 30px 5% 10px;
-            overflow-x: auto;
-            padding-bottom: 5px;
-        }
-
-        .tab-btn {
-            background: var(--card-bg);
-            color: #fff;
-            border: 1px solid #334155;
-            padding: 8px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: 0.3s;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
         /* Movie Grid */
-        main { padding: 20px 5%; }
+        main { padding: 30px 5%; }
 
         .movie-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
         }
 
         .movie-card {
             background: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid #334155;
             position: relative;
@@ -178,77 +141,85 @@
         .movie-card:hover {
             transform: translateY(-8px);
             border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
         }
 
         .movie-card img {
             width: 100%;
-            height: 270px;
+            height: 300px;
             object-fit: cover;
         }
 
         .play-icon {
             position: absolute;
-            top: 40%;
+            top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 40px;
+            font-size: 35px;
             color: #fff;
             opacity: 0;
             transition: 0.3s;
-            background: rgba(244, 63, 94, 0.8);
+            background: rgba(244, 63, 94, 0.9);
             border-radius: 50%;
-            padding: 10px 15px;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .movie-card:hover .play-icon { opacity: 1; }
 
         .movie-info {
-            padding: 12px;
+            padding: 15px;
         }
 
         .movie-info h3 {
-            font-size: 16px;
+            font-size: 17px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            color: #f8fafc;
         }
 
         .movie-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
+            font-size: 13px;
             color: #94a3b8;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
         /* Pagination */
         .pagination {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin: 40px 0;
+            gap: 10px;
+            margin: 40px 0 20px;
         }
 
         .page-btn {
             background: var(--card-bg);
             color: #fff;
             border: 1px solid #334155;
-            padding: 8px 14px;
-            border-radius: 5px;
+            padding: 8px 16px;
+            border-radius: 6px;
             cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         .page-btn.active, .page-btn:hover {
             background: var(--accent);
-            color: #000;
-            font-weight: bold;
+            color: #0b0f19;
+            border-color: var(--accent);
         }
 
         /* Movie Request Section */
         .request-section {
             background: var(--card-bg);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin: 40px 5%;
             border: 1px solid #334155;
             text-align: center;
@@ -263,11 +234,12 @@
 
         .request-form input {
             flex: 1;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 6px;
             border: 1px solid #334155;
             background: #0f172a;
             color: #fff;
+            outline: none;
         }
 
         .request-form button {
@@ -275,8 +247,9 @@
             color: #fff;
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         /* Modal / Video Player Popup */
@@ -293,7 +266,7 @@
 
         .modal-content {
             width: 90%;
-            max-width: 700px;
+            max-width: 750px;
             background: #000;
             border-radius: 10px;
             position: relative;
@@ -326,8 +299,8 @@
         .social-icons a {
             color: #fff;
             background: var(--card-bg);
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -338,6 +311,7 @@
 
         .social-icons a:hover {
             background: var(--primary);
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -368,11 +342,6 @@
         </ul>
     </header>
 
-    <!-- Top Ad Banner -->
-    <div class="ad-banner">
-        <strong>[বিজ্ঞাপন / Ad Space]</strong> এখানে আপনার ব্যানার বা অ্যাডভার্টাইজমেন্ট দিতে পারেন!
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -382,85 +351,19 @@
         </div>
     </section>
 
-    <!-- Category Filters -->
-    <div class="filter-tabs">
-        <button class="tab-btn active">সব (All)</button>
-        <button class="tab-btn">বাংলা (Bangla)</button>
-        <button class="tab-btn">হিন্দি (Hindi)</button>
-        <button class="tab-btn">সাউথ (South Indian)</button>
-        <button class="tab-btn">ইংরেজি (Hollywood)</button>
-    </div>
-
     <!-- Main Movie Grid -->
     <main id="movies">
-        <div class="movie-grid">
-
-            <!-- Movie Card 1 -->
-            <div class="movie-card" onclick="openTrailer('https://www.youtube.com/embed/5U7bL7lP59c')">
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80" alt="Toofan">
-                <i class="fa-solid fa-play play-icon"></i>
-                <div class="movie-info">
-                    <h3>তুফান (Toofan)</h3>
-                    <div class="movie-meta">
-                        <span><i class="fa-solid fa-star" style="color:gold;"></i> 8.8</span>
-                        <span>2024 • Bangla</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Movie Card 2 -->
-            <div class="movie-card" onclick="openTrailer('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80" alt="Jawan">
-                <i class="fa-solid fa-play play-icon"></i>
-                <div class="movie-info">
-                    <h3>জাওয়ান (Jawan)</h3>
-                    <div class="movie-meta">
-                        <span><i class="fa-solid fa-star" style="color:gold;"></i> 8.4</span>
-                        <span>2023 • Hindi</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Movie Card 3 -->
-            <div class="movie-card" onclick="openTrailer('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80" alt="Pushpa 2">
-                <i class="fa-solid fa-play play-icon"></i>
-                <div class="movie-info">
-                    <h3>পুস্পা ২ (Pushpa 2)</h3>
-                    <div class="movie-meta">
-                        <span><i class="fa-solid fa-star" style="color:gold;"></i> 9.0</span>
-                        <span>2024 • South</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Movie Card 4 -->
-            <div class="movie-card" onclick="openTrailer('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80" alt="Avatar">
-                <i class="fa-solid fa-play play-icon"></i>
-                <div class="movie-info">
-                    <h3>অ্যাভাটার (Avatar)</h3>
-                    <div class="movie-meta">
-                        <span><i class="fa-solid fa-star" style="color:gold;"></i> 8.9</span>
-                        <span>2022 • English</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- In-Page Ad Banner -->
-        <div class="ad-banner" style="margin-top: 30px;">
-            <strong>[স্পন্সরড অ্যাড / Sponsored Banner]</strong> আপনার বিজ্ঞাপন প্রচার করুন!
+        <h2 style="margin-bottom: 20px; border-left: 4px solid var(--accent); padding-left: 10px;" id="txtCatTitle">জনপ্রিয় সিনেমা কালেকশন</h2>
+        
+        <div class="movie-grid" id="movieGrid">
+            <!-- JavaScript এর মাধ্যমে পেজ অনুযায়ী মুভি লোড হবে -->
         </div>
 
         <!-- Pagination -->
         <div class="pagination">
-            <button class="page-btn">«</button>
-            <button class="page-btn active">১</button>
-            <button class="page-btn">২</button>
-            <button class="page-btn">৩</button>
-            <button class="page-btn">»</button>
+            <button class="page-btn active" onclick="loadPage(1)">১</button>
+            <button class="page-btn" onclick="loadPage(2)">২</button>
+            <button class="page-btn" onclick="loadPage(3)">৩</button>
         </div>
     </main>
 
@@ -492,53 +395,19 @@
             <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://telegram.org" target="_blank"><i class="fa-brands fa-telegram"></i></a>
         </div>
-        <p style="font-size: 13px; color: #64748b;">© 2026 <strong>Tusher BD Movie Portal</strong> | সর্বস্বত্ব সংরক্ষিত</p>
+        <p style="font-size: 13px; color: #64748b; margin-top: 10px;">© 2026 <strong>Tusher BD Movie Portal</strong> | সর্বস্বত্ব সংরক্ষিত</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JavaScript Data and Functions -->
     <script>
-        // Live Clock Function
-        function updateClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let seconds = now.getSeconds();
-            let ampm = hours >= 12 ? 'PM' : 'AM';
-            
-            hours = hours % 12;
-            hours = hours ? hours : 12;
-            
-            hours = hours < 10 ? '0' + hours : hours;
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-            
-            document.getElementById('liveClock').innerText = `${hours}:${minutes}:${seconds} ${ampm}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Video Modal Control
-        function openTrailer(url) {
-            document.getElementById('trailerFrame').src = url;
-            document.getElementById('videoModal').style.display = 'flex';
-        }
-
-        function closeTrailer() {
-            document.getElementById('trailerFrame').src = '';
-            document.getElementById('videoModal').style.display = 'none';
-        }
-
-        // Movie Request Submission
-        function submitRequest(e) {
-            e.preventDefault();
-            const movieName = document.getElementById('reqInput').value;
-            alert('ধন্যবাদ! "' + movieName + '" মুভির রিকোয়েস্ট গ্রহণ করা হয়েছে।');
-            document.getElementById('reqInput').value = '';
-        }
-
-        // Language Switcher
-        function changeLanguage() {
-            const lang = document.getElementById('langSelect').value;
-            if(lang === 'en') {
-                document.getElementById('txtHome').innerText = "Home";
-                document.getElementById('txtMovies').innerText = "Movies";
+        // পেজভিত্তিক মুভি ডাটা (Page 1, Page 2, Page 3)
+        const moviesData = {
+            1: [
+                { title: "তুফান (Toofan)", year: "2024", lang: "Bangla", rating: "8.8", img: "https://m.media-amazon.com/images/M/MV5BMjA0MTM4MTgtNDRjMC00MTRiLTgxNDctM2I0YWI1OGQxM2U1XkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/5U7bL7lP59c" },
+                { title: "জাওয়ান (Jawan)", year: "2023", lang: "Hindi", rating: "8.4", img: "https://m.media-amazon.com/images/M/MV5BOWI5NmU3NTUtOTlhNi00M2VlLTg5YzAtYzgzZDZhOWNkNWU2XkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/COv52Qyctws" },
+                { title: "পুস্পা ২ (Pushpa 2)", year: "2024", lang: "South", rating: "9.0", img: "https://m.media-amazon.com/images/M/MV5BNGViM2M4NmUtMmE3NC00MDM0LWFjNDItMzBiMjM3ZmE1NWZhXkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/1kC3lY2-9mU" },
+                { title: "অ্যাভাটার (Avatar 2)", year: "2022", lang: "English", rating: "8.9", img: "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctYzE2Yy00N1gwLTllMGEtMGJhMDNhZWZhNTlhXkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/d9MyW72ELq0" }
+            ],
+            2: [
+                { title: "প্রিয় মালতী", year: "2024", lang: "Bangla", rating: "8.2", img: "https://m.media-amazon.com/images/M/MV5BNTIxOGE1NzQtY2JhNi00ODFjLTg0NTYtYWIzMDRlNTM1YTU1XkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+                { title: "অ্যানিম্যাল (Animal)", year: "2023", lang: "Hindi", rating: "8.1", img: "
