@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tusher BD - Movie & Trailer Portal</title>
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Tusher BD - Premium Movie Portal</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #f43f5e;
-            --accent: #38bdf8;
-            --bg-dark: #0b0f19;
-            --card-bg: #1e293b;
+            --primary: #e50914; /* Netflix Red */
+            --accent: #38bdf8;  /* Neon Blue */
+            --bg-dark: #070a12;
+            --card-bg: rgba(30, 41, 59, 0.7);
             --text-light: #f8fafc;
         }
 
@@ -21,61 +21,79 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Hind Siliguri', sans-serif;
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
         }
 
         body {
             background-color: var(--bg-dark);
             color: var(--text-light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Top Bar */
+        /* Top Header Bar */
         .top-bar {
-            background: #0f172a;
-            padding: 10px 5%;
+            background: #020617;
+            padding: 8px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
-            border-bottom: 1px solid #1e293b;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .clock-box {
             color: var(--accent);
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
+
+        .top-contact {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-contact i { color: var(--primary); }
 
         .lang-select {
-            background: #1e293b;
+            background: #0f172a;
             color: #fff;
             border: 1px solid #334155;
-            padding: 4px 8px;
-            border-radius: 5px;
+            padding: 3px 8px;
+            border-radius: 4px;
             outline: none;
+            cursor: pointer;
         }
 
-        /* Header */
+        /* Header / Navbar */
         header {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(7, 10, 18, 0.9);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #334155;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(15px);
         }
 
         .logo {
-            font-size: 26px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 800;
             color: var(--accent);
             text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
         }
 
-        .logo span { color: var(--primary); }
+        .logo span { color: var(--primary); text-shadow: 0 0 12px rgba(229, 9, 20, 0.4); }
 
         .nav-links {
             display: flex;
@@ -84,91 +102,149 @@
         }
 
         .nav-links a {
-            color: #cbd5e1;
+            color: #e2e8f0;
             text-decoration: none;
             font-weight: 600;
+            transition: 0.3s;
         }
 
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero Section */
+        /* Hero Cinema Banner */
         .hero {
-            padding: 40px 5%;
-            background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
-            border-radius: 0 0 20px 20px;
+            padding: 60px 5%;
+            background: linear-gradient(90deg, rgba(7, 10, 18, 0.95) 0%, rgba(7, 10, 18, 0.6) 100%), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .hero h1 {
-            font-size: 32px;
-            margin: 10px 0;
-            color: #fff;
+        .hero-content {
+            max-width: 650px;
         }
 
         .badge {
             background: var(--primary);
-            padding: 4px 10px;
-            border-radius: 4px;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin: 12px 0;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin-bottom: 20px;
         }
 
         .hero-btn {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 12px 25px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
-            margin-top: 15px;
-            display: inline-block;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: scale(1.05);
+            background: #ff121d;
         }
 
         /* Movie Section */
-        main { padding: 30px 5%; }
+        main { padding: 40px 5%; }
 
         .section-title {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border-left: 4px solid var(--accent);
             padding-left: 12px;
-            font-size: 22px;
+            font-size: 24px;
+            font-weight: 700;
         }
 
         .movie-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 25px;
         }
 
         .movie-card {
             background: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 14px;
             overflow: hidden;
-            border: 1px solid #334155;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.4s ease;
+            position: relative;
         }
 
         .movie-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
             border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
         }
 
         .movie-card img {
             width: 100%;
-            height: 260px;
+            height: 300px;
             object-fit: cover;
             display: block;
         }
 
+        .play-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 300px;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .movie-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-btn-icon {
+            background: var(--primary);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+        }
+
         .movie-info {
-            padding: 12px;
+            padding: 15px;
         }
 
         .movie-info h3 {
-            font-size: 16px;
+            font-size: 17px;
             color: #fff;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -177,7 +253,7 @@
         .movie-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
+            font-size: 13px;
             color: #94a3b8;
         }
 
@@ -185,69 +261,73 @@
         .pagination {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin: 30px 0;
+            gap: 12px;
+            margin: 40px 0 10px;
         }
 
         .page-btn {
-            background: var(--card-bg);
+            background: #0f172a;
             color: #fff;
             border: 1px solid #334155;
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 15px;
+            transition: 0.3s;
         }
 
         .page-btn.active, .page-btn:hover {
             background: var(--accent);
-            color: #0b0f19;
+            color: #020617;
             border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
         }
 
-        /* Request Form */
+        /* Movie Request Section */
         .request-section {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 5%;
-            border: 1px solid #334155;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            padding: 35px;
+            border-radius: 16px;
+            margin: 40px 5%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
         }
 
         .request-form {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             max-width: 500px;
-            margin: 15px auto 0;
+            margin: 20px auto 0;
         }
 
         .request-form input {
             flex: 1;
-            padding: 10px;
-            border-radius: 6px;
+            padding: 12px 18px;
+            border-radius: 30px;
             border: 1px solid #334155;
-            background: #0f172a;
+            background: #020617;
             color: #fff;
+            outline: none;
         }
 
         .request-form button {
             background: var(--primary);
             color: #fff;
             border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 12px 25px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
         }
 
-        /* Popup Video Player */
+        /* Video Modal */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -255,49 +335,91 @@
 
         .modal-content {
             width: 90%;
-            max-width: 700px;
+            max-width: 750px;
             background: #000;
-            border-radius: 8px;
+            border-radius: 12px;
             position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
         }
 
         .close-btn {
             position: absolute;
-            top: -35px;
+            top: -38px;
             right: 0;
             color: #fff;
-            font-size: 28px;
+            font-size: 32px;
             cursor: pointer;
         }
 
-        /* Footer */
+        /* Gorgeous Footer */
         footer {
-            background: #0f172a;
-            padding: 25px 5%;
-            text-align: center;
-            border-top: 1px solid #1e293b;
+            background: #020617;
+            padding: 40px 5% 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .footer-box h4 {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-box p, .footer-box li {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-box i {
+            color: var(--primary);
+            margin-right: 8px;
         }
 
         .social-icons {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
+            gap: 12px;
+            margin-top: 15px;
         }
 
         .social-icons a {
             color: #fff;
-            background: var(--card-bg);
-            width: 38px;
-            height: 38px;
+            background: #1e293b;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             text-decoration: none;
+            transition: 0.3s;
         }
 
-        .social-icons a:hover { background: var(--primary); }
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 13px;
+            color: #64748b;
+        }
     </style>
 </head>
 <body>
@@ -307,6 +429,9 @@
         <div class="clock-box">
             <i class="fa-regular fa-clock"></i> <span id="liveClock">00:00:00 AM</span>
         </div>
+        <a href="tel:01728170476" class="top-contact">
+            <i class="fa-solid fa-phone"></i> 01728170476
+        </a>
         <div>
             <i class="fa-solid fa-globe"></i> 
             <select class="lang-select" id="langSelect" onchange="changeLanguage()">
@@ -324,192 +449,25 @@
             <li><a href="#" id="txtHome">হোম</a></li>
             <li><a href="#movies" id="txtMovies">সিনেমা</a></li>
             <li><a href="#request" id="txtRequest">রিকোয়েস্ট</a></li>
+            <li><a href="#contact" id="txtContact">যোগাযোগ</a></li>
         </ul>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div>
-            <span class="badge">ট্রেন্ডিং ট্রেইলার</span>
+        <div class="hero-content">
+            <span class="badge">ট্রেন্ডিং এক্সক্লুসিভ</span>
             <h1 id="heroTitle">তুফান (Toofan) - অফিশিয়াল ট্রেইলার</h1>
-            <p id="heroDesc">নব্বই দশকের এক গ্যাংস্টারের উত্থান ও রাজত্বের গল্প। শাকিব খান ও চঞ্চল চৌধুরীর মেগা অফিশিয়াল অ্যাকশন ট্রেইলার!</p>
+            <p id="heroDesc">নব্বই দশকের এক গ্যাংস্টারের উত্থান ও রাজত্বের রোমাঞ্চকর গল্প। শাকিব খান ও চঞ্চল চৌধুরীর দুর্দান্ত অ্যাকশন উপভোগ করুন!</p>
             <button class="hero-btn" onclick="openTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')">
-                <i class="fa-solid fa-play"></i> ট্রেইলার দেখুন
+                <i class="fa-solid fa-play"></i> ট্রেইলার প্লে করুন
             </button>
         </div>
     </section>
 
-    <!-- Main Movies -->
+    <!-- Movie Section -->
     <main id="movies">
         <h2 class="section-title" id="txtCatTitle">জনপ্রিয় অফিশিয়াল মুভি ট্রেইলার কালেকশন</h2>
         
         <div class="movie-grid" id="movieGrid">
-            <!-- JavaScript dynamically loads movies here -->
-        </div>
-
-        <!-- Pagination -->
-        <div class="pagination">
-            <button class="page-btn active" id="p1" onclick="loadPage(1)">১</button>
-            <button class="page-btn" id="p2" onclick="loadPage(2)">২</button>
-            <button class="page-btn" id="p3" onclick="loadPage(3)">৩</button>
-        </div>
-    </main>
-
-    <!-- Request Form -->
-    <div class="request-section" id="request">
-        <h2 id="txtReqTitle">পছন্দের মুভি বা ট্রেইলার রিকোয়েস্ট করুন</h2>
-        <p style="color: #94a3b8;" id="txtReqDesc">আপনি যে মুভি বা ট্রেইলারটি দেখতে চান তার নাম লিখে সাবমিট করুন।</p>
-        <form class="request-form" onsubmit="submitRequest(event)">
-            <input type="text" id="reqInput" placeholder="মুভির নাম লিখুন..." required>
-            <button type="submit" id="btnSubmit">পাঠান</button>
-        </form>
-    </div>
-
-    <!-- Modal Video Player -->
-    <div class="modal" id="videoModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeTrailer()">&times;</span>
-            <iframe id="trailerFrame" width="100%" height="380" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p id="txtFooter">আমাদের সাথে সোশ্যাল মিডিয়ায় যুক্ত থাকুন:</p>
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://telegram.org" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-        </div>
-        <p style="font-size: 13px; color: #64748b; margin-top: 10px;">© 2026 <strong>Tusher BD Movie Portal</strong> | সর্বস্বত্ব সংরক্ষিত</p>
-    </footer>
-
-    <!-- Script Engine -->
-    <script>
-        const moviesData = {
-            1: [
-                { title: "তুফান (Toofan)", year: "2024", lang: "Bangla", rating: "8.8", img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NcfmOXFh1Ig" },
-                { title: "জাওয়ান (Jawan)", year: "2023", lang: "Hindi", rating: "8.4", img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/5lcGxJvOKus" },
-                { title: "পুস্পা ২ (Pushpa 2)", year: "2024", lang: "South", rating: "9.0", img: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/r588USiDBMc" },
-                { title: "কেজিএফ ২ (KGF 2)", year: "2022", lang: "South", rating: "8.7", img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/R4zMJ_T_Z_I" }
-            ],
-            2: [
-                { title: "প্রিয় মালতী", year: "2024", lang: "Bangla", rating: "8.2", img: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NcfmOXFh1Ig" },
-                { title: "অ্যানিম্যাল (Animal)", year: "2023", lang: "Hindi", rating: "8.1", img: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/Dydmpej652A" },
-                { title: "অ্যাভাটার ২ (Avatar 2)", year: "2022", lang: "English", rating: "8.9", img: "https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/d9MyW72ELq0" },
-                { title: "অ্যাভেঞ্জার্স (Endgame)", year: "2019", lang: "English", rating: "9.2", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/TcMBFSGVi1c" }
-            ],
-            3: [
-                { title: "পরাণ (Poran)", year: "2022", lang: "Bangla", rating: "8.6", img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NcfmOXFh1Ig" },
-                { title: "পাঠান (Pathaan)", year: "2023", lang: "Hindi", rating: "8.0", img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/vqu4z34wENw" },
-                { title: "আরআরআর (RRR)", year: "2022", lang: "South", rating: "8.8", img: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NgBoAI3pL0M" },
-                { title: "স্পাইডারম্যান", year: "2021", lang: "English", rating: "8.7", img: "https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/Rt_UqUm38BI" }
-            ]
-        };
-
-        function loadPage(pageNum) {
-            var grid = document.getElementById('movieGrid');
-            if(!grid) return;
             
-            grid.innerHTML = '';
-            var list = moviesData[pageNum] || [];
-
-            for (var i = 0; i < list.length; i++) {
-                var m = list[i];
-                var card = document.createElement('div');
-                card.className = 'movie-card';
-                card.setAttribute('onclick', "openTrailer('" + m.trailer + "')");
-                card.innerHTML = 
-                    '<img src="' + m.img + '" alt="' + m.title + '">' +
-                    '<div class="movie-info">' +
-                        '<h3>' + m.title + '</h3>' +
-                        '<div class="movie-meta">' +
-                            '<span><i class="fa-solid fa-star" style="color:gold;"></i> ' + m.rating + '</span>' +
-                            '<span>' + m.year + ' • ' + m.lang + '</span>' +
-                        '</div>' +
-                    '</div>';
-                grid.appendChild(card);
-            }
-
-            // Update button styles
-            document.getElementById('p1').className = pageNum === 1 ? 'page-btn active' : 'page-btn';
-            document.getElementById('p2').className = pageNum === 2 ? 'page-btn active' : 'page-btn';
-            document.getElementById('p3').className = pageNum === 3 ? 'page-btn active' : 'page-btn';
-        }
-
-        // Live Clock
-        function updateClock() {
-            var now = new Date();
-            var h = now.getHours();
-            var m = now.getMinutes();
-            var s = now.getSeconds();
-            var ampm = h >= 12 ? 'PM' : 'AM';
-            h = h % 12;
-            h = h ? h : 12;
-            h = h < 10 ? '0' + h : h;
-            m = m < 10 ? '0' + m : m;
-            s = s < 10 ? '0' + s : s;
-            var el = document.getElementById('liveClock');
-            if(el) el.innerText = h + ':' + m + ':' + s + ' ' + ampm;
-        }
-
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Load Page 1 on start
-        window.onload = function() {
-            loadPage(1);
-        };
-
-        function openTrailer(url) {
-            document.getElementById('trailerFrame').src = url + "?autoplay=1";
-            document.getElementById('videoModal').style.display = 'flex';
-        }
-
-        function closeTrailer() {
-            document.getElementById('trailerFrame').src = '';
-            document.getElementById('videoModal').style.display = 'none';
-        }
-
-        function submitRequest(e) {
-            e.preventDefault();
-            var val = document.getElementById('reqInput').value;
-            alert('ধন্যবাদ! "' + val + '" মুভির ট্রেইলার রিকোয়েস্ট গ্রহণ করা হয়েছে।');
-            document.getElementById('reqInput').value = '';
-        }
-
-        function changeLanguage() {
-            var lang = document.getElementById('langSelect').value;
-            if(lang === 'en') {
-                document.getElementById('txtHome').innerText = "Home";
-                document.getElementById('txtMovies').innerText = "Movies";
-                document.getElementById('txtRequest').innerText = "Request";
-                document.getElementById('txtCatTitle').innerText = "Popular Official Trailers Collection";
-                document.getElementById('heroTitle').innerText = "Toofan - Official Trailer";
-                document.getElementById('heroDesc').innerText = "A story of the rise and rule of a 90s gangster featuring Shakib Khan & Chanchal Chowdhury!";
-                document.getElementById('txtReqTitle').innerText = "Request a Movie Trailer";
-                document.getElementById('txtReqDesc').innerText = "Type the name of the movie trailer you want to watch.";
-                document.getElementById('reqInput').placeholder = "Enter movie name...";
-                document.getElementById('btnSubmit').innerText = "Submit";
-                document.getElementById('txtFooter').innerText = "Connect with us on social media:";
-            } else if(lang === 'bng') {
-                document.getElementById('txtHome').innerText = "Home";
-                document.getElementById('txtMovies').innerText = "Cinema";
-                document.getElementById('txtRequest').innerText = "Request";
-                document.getElementById('txtCatTitle').innerText = "Popular Official Trailer Collection";
-                document.getElementById('heroTitle').innerText = "Toofan - Official Trailer";
-                document.getElementById('heroDesc').innerText = "90s er ek gangster er utthan o rajotter golpo. Shakib Khan o Chanchal Chowdhury!";
-                document.getElementById('txtReqTitle').innerText = "Movie Trailer Request Korun";
-                document.getElementById('txtReqDesc').innerText = "Apni je movie trailer dekhte chan tar naam likhe submit korun.";
-                document.getElementById('reqInput').placeholder = "Movie er naam likhun...";
-                document.getElementById('btnSubmit').innerText = "Pathan";
-                document.getElementById('txtFooter').innerText = "Amader sathe social media te jukto thakun:";
-            } else {
-                location.reload();
-            }
-        }
-    </script>
-</body>
-</html>
