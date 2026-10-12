@@ -3,20 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tusher BD - Official Movie Portal</title>
-    <!-- Google Fonts & FontAwesome -->
+    <title>Tusher BD - Movie Portal</title>
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
-            --primary: #e50914;
-            --accent: #38bdf8;
-            --bg-dark: #0b0f19;
-            --card-bg: #1e293b;
-            --text-light: #f8fafc;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -25,8 +17,8 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            background-color: #0b0f19;
+            color: #f8fafc;
             line-height: 1.6;
         }
 
@@ -38,19 +30,13 @@
             justify-content: space-between;
             align-items: center;
             font-size: 13px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid #1e293b;
         }
 
         .clock-box {
             color: #ff2222;
             font-weight: 700;
             white-space: nowrap;
-            font-size: 14px;
-        }
-
-        .clock-box i {
-            color: #ff2222;
-            margin-right: 5px;
         }
 
         .moving-movies {
@@ -64,7 +50,7 @@
 
         /* Navbar */
         header {
-            background: rgba(11, 15, 25, 0.95);
+            background: #0b0f19;
             padding: 12px 5%;
             display: flex;
             justify-content: space-between;
@@ -78,11 +64,11 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            color: var(--accent);
+            color: #38bdf8;
             text-decoration: none;
         }
 
-        .logo span { color: var(--primary); }
+        .logo span { color: #e50914; }
 
         .nav-links {
             display: flex;
@@ -98,7 +84,7 @@
             cursor: pointer;
         }
 
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover { color: #38bdf8; }
 
         /* Hero Banner */
         .hero {
@@ -108,7 +94,7 @@
         }
 
         .badge {
-            background: var(--primary);
+            background: #e50914;
             color: #fff;
             padding: 3px 10px;
             border-radius: 4px;
@@ -129,7 +115,7 @@
         }
 
         .hero-btn {
-            background: var(--primary);
+            background: #e50914;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -142,11 +128,169 @@
             gap: 6px;
         }
 
-        /* Horizontal Slider Main */
+        /* Movie Section & Slider */
         main { padding: 25px 5%; }
 
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            border-left: 4px solid #38bdf8;
+            padding-left: 10px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .slider-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .slide-arrow {
+            background: #1e293b;
+            color: #fff;
+            border: 1px solid #334155;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .movie-slider {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+        }
+
+        .movie-slider::-webkit-scrollbar { display: none; }
+
+        .movie-card {
+            min-width: 160px;
+            width: 160px;
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .movie-info { padding: 10px; }
+
+        .movie-info h3 {
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0 10px;
+        }
+
+        .page-btn {
+            background: #0f172a;
+            color: #fff;
+            border: 1px solid #334155;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .page-btn.active {
+            background: #38bdf8;
+            color: #020617;
+            border-color: #38bdf8;
+        }
+
+        /* Request Form */
+        .request-section {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 5%;
+            border: 1px solid #1e293b;
+            text-align: center;
+        }
+
+        .request-form {
+            display: flex;
+            gap: 10px;
+            max-width: 450px;
+            margin: 15px auto 0;
+        }
+
+        .request-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+            background: #020617;
+            color: #fff;
+            outline: none;
+        }
+
+        .request-form button {
+            background: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            width: 90%;
+            max-width: 480px;
+            background: #0f172a;
+            border-radius: 12px;
+            position: relative;
+            padding: 25px;
+            border: 1px solid #38bdf8;
+        }
+
+        .close-btn {
+            
