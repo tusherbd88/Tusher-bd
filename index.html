@@ -1,600 +1,205 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tusher BD - Movie Portal</title>
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Hind Siliguri', sans-serif;
-        }
-
-        body {
-            background-color: #0b0f19;
-            color: #f8fafc;
-            line-height: 1.6;
-        }
-
-        /* Top Bar & Red Clock */
-        .top-bar {
-            background: #020617;
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            border-bottom: 1px solid #1e293b;
-        }
-
-        .clock-box {
-            color: #ff2222;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .moving-movies {
-            flex: 1;
-            margin: 0 15px;
-            overflow: hidden;
-            white-space: nowrap;
-            color: #38bdf8;
-            font-weight: 600;
-        }
-
-        /* Navbar */
-        header {
-            background: #0b0f19;
-            padding: 12px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #1e293b;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #38bdf8;
-            text-decoration: none;
-        }
-
-        .logo span { color: #e50914; }
-
-        .nav-links {
-            display: flex;
-            gap: 15px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover { color: #38bdf8; }
-
-        /* Hero Banner Slider */
-        .hero-slider-container {
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid #1e293b;
-            background: #0b0f19;
-        }
-
-        .hero-slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        .hero-slide {
-            min-width: 100%;
-            padding: 40px 5%;
-            background-color: #111827;
-        }
-
-        .hero-content {
-            max-width: 600px;
-        }
-
-        .badge {
-            background: #e50914;
-            color: #fff;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .hero-slide h1 {
-            font-size: 26px;
-            margin: 10px 0;
-            color: #fff;
-        }
-
-        .hero-slide p {
-            color: #cbd5e1;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .hero-btn {
-            background: #e50914;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .hero-controls {
-            position: absolute;
-            bottom: 15px;
-            right: 5%;
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .hero-arrow {
-            background: #1e293b;
-            color: #fff;
-            border: 1px solid #334155;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        /* Movie Section */
-        main { padding: 25px 5%; }
-
-        .section-title {
-            margin-bottom: 15px;
-            border-left: 4px solid #38bdf8;
-            padding-left: 10px;
-            font-size: 18px;
-            color: #fff;
-        }
-
-        .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 15px;
-        }
-
-        .movie-card {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #334155;
-            cursor: pointer;
-        }
-
-        .movie-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .movie-info { padding: 10px; }
-
-        .movie-info h3 {
-            font-size: 14px;
-            color: #fff;
-            margin-bottom: 4px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .movie-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            color: #94a3b8;
-        }
-
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin: 25px 0 10px;
-        }
-
-        .page-btn {
-            background: #0f172a;
-            color: #fff;
-            border: 1px solid #334155;
-            padding: 6px 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .page-btn.active {
-            background: #38bdf8;
-            color: #020617;
-            border-color: #38bdf8;
-        }
-
-        /* Request Form */
-        .request-section {
-            background: #0f172a;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 5%;
-            border: 1px solid #1e293b;
-            text-align: center;
-        }
-
-        .request-form {
-            display: flex;
-            gap: 10px;
-            max-width: 450px;
-            margin: 15px auto 0;
-        }
-
-        .request-form input {
-            flex: 1;
-            padding: 10px 15px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            background: #020617;
-            color: #fff;
-            outline: none;
-        }
-
-        .request-form button {
-            background: #e50914;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* Modals */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            width: 90%;
-            max-width: 480px;
-            background: #0f172a;
-            border-radius: 12px;
-            position: relative;
-            padding: 25px;
-            border: 1px solid #38bdf8;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: #fff;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        .contact-popup-title {
-            color: #38bdf8;
-            font-size: 18px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e50914;
-            padding-bottom: 5px;
-        }
-
-        .contact-list { list-style: none; text-align: left; }
-
-        .contact-list li {
-            margin-bottom: 12px;
-            font-size: 14px;
-            color: #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-list i { color: #e50914; width: 20px; }
-
-        .map-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #4285F4;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            margin-top: 10px;
-        }
-
-        /* Footer */
-        footer {
-            background: #020617;
-            padding: 20px 5%;
-            border-top: 1px solid #1e293b;
-            margin-top: 30px;
-            text-align: center;
-            font-size: 12px;
-            color: #64748b;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tusher BD - ওয়েবসাইট তৈরি, ডিজাইন, ল্যান্ডিং পেজ ও AI অটোমেশন সেবা।">
+  <title>Tusher BD | Freelance Services</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.7;
+    }
+    header {
+      background: #101a33;
+      color: white;
+      padding: 18px 16px;
+      text-align: center;
+    }
+    header h2 { margin: 0; font-size: 27px; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 12px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .hero {
+      text-align: center;
+      padding: 65px 18px;
+      color: white;
+      background: linear-gradient(135deg, #173b78, #526de5);
+    }
+    .hero h1 {
+      font-size: clamp(30px, 7vw, 44px);
+      line-height: 1.3;
+      margin: 0 0 16px;
+    }
+    .hero p { max-width: 600px; margin: 0 auto 24px; }
+    .button {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      padding: 11px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+    .button.blue { background: #244bb8; }
+    section { padding: 42px 16px; }
+    .container { max-width: 950px; margin: auto; }
+    .heading { text-align: center; margin-bottom: 25px; }
+    .heading h2 { font-size: 28px; margin-bottom: 5px; }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 13px;
+      box-shadow: 0 4px 18px #14213d0d;
+    }
+    .card h3 { margin-top: 0; color: #244bb8; }
+    .about { background: white; text-align: center; }
+    .contact-card {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 24px;
+      border-radius: 13px;
+      overflow-wrap: anywhere;
+    }
+    footer {
+      background: #101a33;
+      color: white;
+      text-align: center;
+      padding: 20px 12px;
+    }
+    footer p { margin: 5px; }
+  </style>
 </head>
 <body>
 
-    <!-- Header Bar -->
-    <div class="top-bar">
-        <div class="clock-box">
-            <i class="fa-regular fa-clock"></i> <span id="liveClock">00:00:00 AM</span>
-        </div>
-        <div class="moving-movies">
-            <marquee behavior="scroll" direction="left" scrollamount="4">
-                🎬 নতুন মুভি আসছে: তুফান (Toofan) • জাওয়ান (Jawan) • পুস্পা ২ (Pushpa 2) • কেজিএফ ২ (KGF 2) • অ্যানিম্যাল (Animal) 🎥
-            </marquee>
-        </div>
+  <header>
+    <h2>Tusher BD</h2>
+    <nav>
+      <a href="#home">হোম</a>
+      <a href="#services">সার্ভিস</a>
+      <a href="#about">আমার পরিচয়</a>
+      <a href="#contact">যোগাযোগ</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <h1>আপনার ব্যবসার জন্য ডিজিটাল সমাধান</h1>
+      <p>
+        আপনার প্রয়োজন অনুযায়ী ওয়েবসাইট তৈরি,
+        সুন্দর ডিজাইন এবং ডিজিটাল অটোমেশন সেবা।
+      </p>
+      <a class="button" href="#services">আমার সার্ভিস দেখুন</a>
+      <a class="button" href="https://wa.me/8801728170476"
+         target="_blank" rel="noopener noreferrer">
+        WhatsApp-এ যোগাযোগ
+      </a>
     </div>
 
-    <!-- Navigation -->
-    <header>
-        <a href="#" class="logo">TUSHER <span>BD</span></a>
-        <ul class="nav-links">
-            <li><a href="#">হোম</a></li>
-            <li><a href="#movies">সিনেমা</a></li>
-            <li><a href="#request">রিকোয়েস্ট</a></li>
-            <li><a href="javascript:void(0)" onclick="openContactModal()">যোগাযোগ</a></li>
-        </ul>
-    </header>
+    <section id="services">
+      <div class="container">
+        <div class="heading">
+          <h2>আমার সার্ভিসসমূহ</h2>
+          <p>আপনার প্রয়োজন অনুযায়ী সেবা বেছে নিন।</p>
+        </div>
 
-    <!-- Hero Banner Slider -->
-    <section class="hero-slider-container">
-        <div class="hero-slider" id="heroSlider">
-            <div class="hero-slide">
-                <div class="hero-content">
-                    <span class="badge">ট্রেন্ডিং এক্সক্লুসিভ</span>
-                    <h1>তুফান (Toofan) - অফিশিয়াল ট্রেইলার</h1>
-                    <p>নব্বই দশকের এক গ্যাংস্টারের উত্থান ও রাজত্বের রোমাঞ্চকর গল্প। শাকিব খান ও চঞ্চল চৌধুরীর দুর্দান্ত অ্যাকশন!</p>
-                    <button class="hero-btn" onclick="playTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')"><i class="fa-solid fa-play"></i> ট্রেইলার দেখুন</button>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <div class="hero-content">
-                    <span class="badge">হাইপড ট্রেইলার</span>
-                    <h1>জাওয়ান (Jawan) - অফিশিয়াল ট্রেইলার</h1>
-                    <p>শাহরুখ খানের এক অসাধারণ অ্যাকশন থ্রিলার চলচ্চিত্র। সমাজ পরিবর্তনের এক রোমাঞ্চকর মিশন!</p>
-                    <button class="hero-btn" onclick="playTrailer('https://www.youtube.com/embed/5lcGxJvOKus')"><i class="fa-solid fa-play"></i> ট্রেইলার দেখুন</button>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <div class="hero-content">
-                    <span class="badge">মেগা ব্লকবাস্টার</span>
-                    <h1>পুস্পা ২ (Pushpa 2: The Rule)</h1>
-                    <p>অল্লু অর্জুনের বহুল প্রতীক্ষিত অ্যাকশন মুভি। পুষ্পার রাজত্ব ও নতুন লড়াইয়ের রোমাঞ্চকর গল্প!</p>
-                    <button class="hero-btn" onclick="playTrailer('https://www.youtube.com/embed/r588USiDBMc')"><i class="fa-solid fa-play"></i> ট্রেইলার দেখুন</button>
-                </div>
-            </div>
+        <div class="services">
+          <div class="card">
+            <h3>🌐 ওয়েবসাইট তৈরি</h3>
+            <p>ব্যক্তিগত, পোর্টফোলিও ও ছোট ব্যবসার ওয়েবসাইট।</p>
+            <a class="button" href="https://wa.me/8801728170476?text=আমি%20ওয়েবসাইট%20তৈরি%20করাতে%20চাই">অর্ডার করুন</a>
+          </div>
+
+          <div class="card">
+            <h3>🎨 ওয়েবসাইট ডিজাইন</h3>
+            <p>পরিষ্কার, আকর্ষণীয় ও মোবাইল উপযোগী ডিজাইন।</p>
+            <a class="button" href="https://wa.me/8801728170476?text=আমি%20ওয়েবসাইট%20ডিজাইন%20করাতে%20চাই">অর্ডার করুন</a>
+          </div>
+
+          <div class="card">
+            <h3>📄 ল্যান্ডিং পেজ</h3>
+            <p>পণ্য, ব্যবসা বা সার্ভিস পরিচিতির জন্য ল্যান্ডিং পেজ।</p>
+            <a class="button" href="https://wa.me/8801728170476?text=আমি%20ল্যান্ডিং%20পেজ%20করাতে%20চাই">অর্ডার করুন</a>
+          </div>
+
+          <div class="card">
+            <h3>🤖 AI অটোমেশন</h3>
+            <p>সম্ভব হলে পুনরাবৃত্তিমূলক ডিজিটাল কাজ স্বয়ংক্রিয় করার ব্যবস্থা।</p>
+            <a class="button" href="https://wa.me/8801728170476?text=আমি%20AI%20অটোমেশন%20নিয়ে%20আলোচনা%20করতে%20চাই">আলোচনা করুন</a>
+          </div>
+
+          <div class="card">
+            <h3>🛠️ ওয়েবসাইট আপডেট ও মেরামত</h3>
+            <p>বিদ্যমান ওয়েবসাইটের লেখা, ডিজাইন ও কোডের সমস্যা ঠিক করা।</p>
+            <a class="button" href="https://wa.me/8801728170476?text=আমি%20ওয়েবসাইট%20আপডেট%20বা%20মেরামত%20করাতে%20চাই">যোগাযোগ করুন</a>
+          </div>
         </div>
-        <div class="hero-controls">
-            <button class="hero-arrow" onclick="prevHeroSlide()"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="hero-arrow" onclick="nextHeroSlide()"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
+      </div>
     </section>
 
-    <!-- Movie Section -->
-    <main id="movies">
-        <h2 class="section-title">জনপ্রিয় অফিশিয়াল মুভি ট্রেইলার কালেকশন</h2>
-        
-        <div class="movie-grid" id="movieGrid">
-            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80" alt="Toofan">
-                <div class="movie-info">
-                    <h3>তুফান (Toofan)</h3>
-                    <div class="movie-meta"><span>★ 8.8</span><span>2024 • Bangla</span></div>
-                </div>
-            </div>
-            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/5lcGxJvOKus')">
-                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=500&q=80" alt="Jawan">
-                <div class="movie-info">
-                    <h3>জাওয়ান (Jawan)</h3>
-                    <div class="movie-meta"><span>★ 8.4</span><span>2023 • Hindi</span></div>
-                </div>
-            </div>
-            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/r588USiDBMc')">
-                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80" alt="Pushpa 2">
-                <div class="movie-info">
-                    <h3>পুস্পা ২ (Pushpa 2)</h3>
-                    <div class="movie-meta"><span>★ 9.0</span><span>2024 • South</span></div>
-                </div>
-            </div>
-            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/R4zMJ_T_Z_I')">
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80" alt="KGF 2">
-                <div class="movie-info">
-                    <h3>কেজিএফ ২ (KGF 2)</h3>
-                    <div class="movie-meta"><span>★ 8.7</span><span>2022 • South</span></div>
-                </div>
-            </div>
+    <section class="about" id="about">
+      <div class="container">
+        <div class="heading">
+          <h2>আমার পরিচয়</h2>
+          <p>
+            আমি Tusher BD। ওয়েবসাইট তৈরি, ডিজাইন এবং
+            ডিজিটাল সমাধান নিয়ে কাজ শেখা ও সেবা দেওয়ার
+            লক্ষ্যে এগিয়ে যাচ্ছি।
+          </p>
+          <p>আপনার কাজের প্রয়োজন নিয়ে আমার সঙ্গে যোগাযোগ করুন।</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="heading">
+          <h2>যোগাযোগ ও কাস্টমার কেয়ার</h2>
+          <p>আপনার প্রশ্ন বা কাজের বিস্তারিত জানাতে যোগাযোগ করুন।</p>
         </div>
 
-        <div class="pagination">
-            <button class="page-btn active" id="p1" onclick="changePage(1)">১</button>
-            <button class="page-btn" id="p2" onclick="changePage(2)">২</button>
-            <button class="page-btn" id="p3" onclick="changePage(3)">৩</button>
+        <div class="contact-card">
+          <p><strong>ব্র্যান্ড:</strong> Tusher BD</p>
+          <p><strong>ফোন:</strong>
+            <a href="tel:+8801728170476">01728170476</a>
+          </p>
+          <p><strong>ঠিকানা:</strong> পাবনা, বাংলাদেশ</p>
+          <p><strong>সাপোর্ট:</strong> ফোন ও WhatsApp</p>
+          <a class="button" href="https://wa.me/8801728170476"
+             target="_blank" rel="noopener noreferrer">
+            কাস্টমার কেয়ারে মেসেজ দিন
+          </a>
         </div>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <!-- Request Form -->
-    <main class="request-section" id="request">
-        <h2>পছন্দের মুভি বা ট্রেইলার রিকোয়েস্ট করুন</h2>
-        <p style="color: #94a3b8; font-size: 13px;">আপনি যে মুভি বা ট্রেইলারটি দেখতে চান তার নাম লিখে সাবমিট করুন।</p>
-        <form class="request-form" onsubmit="submitRequest(event)">
-            <input type="text" id="reqInput" placeholder="মুভির নাম লিখুন..." required>
-            <button type="submit">পাঠান</button>
-        </form>
-    </main>
+  <footer>
+    <p>© 2026 Tusher BD. সর্বস্বত্ব সংরক্ষিত।</p>
+    <p>আপনার ডিজিটাল কাজের বিশ্বস্ত সহযোগী হওয়ার লক্ষ্য নিয়ে।</p>
+  </footer>
 
-    <!-- Video Modal -->
-    <div class="modal" id="videoModal">
-        <div class="modal-content" style="max-width: 700px; padding: 0; background: #000;">
-            <span class="close-btn" onclick="closeVideoModal()" style="top:-35px; right:0;">&times;</span>
-            <iframe id="trailerFrame" width="100%" height="380" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- Contact Modal -->
-    <div class="modal" id="contactModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeContactModal()">&times;</span>
-            <h3 class="contact-popup-title"><i class="fa-solid fa-address-card"></i> যোগাযোগের ঠিকানা</h3>
-            <ul class="contact-list">
-                <li><i class="fa-solid fa-location-dot"></i><div><strong>ঠিকানা:</strong><br>গয়েশপুর রথখোলা, পাবনা</div></li>
-                <li><i class="fa-solid fa-phone"></i><div><strong>ফোন:</strong><br><a href="tel:01728170476" style="color: #38bdf8; text-decoration: none;">01728170476</a></div></li>
-                <li><i class="fa-solid fa-envelope"></i><div><strong>ইমেইল:</strong><br><a href="mailto:tusherbd143@gmail.com" style="color: #38bdf8; text-decoration: none;">tusherbd143@gmail.com</a></div></li>
-            </ul>
-            <a href="https://maps.google.com/?q=Goyeshpur+Rathkhola+Pabna" target="_blank" class="map-btn">
-                <i class="fa-solid fa-map-location-dot"></i> গুগল ম্যাপে ঠিকানা দেখুন
-            </a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 <strong>Tusher BD Movie Portal</strong> | সর্বস্বত্ব সংরক্ষিত</p>
-    </footer>
-
-    <!-- Safe Script -->
-    <script>
-        function updateClock() {
-            var now = new Date();
-            var h = now.getHours();
-            var m = now.getMinutes();
-            var s = now.getSeconds();
-            var ampm = h >= 12 ? 'PM' : 'AM';
-            h = h % 12; h = h ? h : 12;
-            h = h < 10 ? '0' + h : h;
-            m = m < 10 ? '0' + m : m;
-            s = s < 10 ? '0' + s : s;
-            var el = document.getElementById('liveClock');
-            if (el) el.innerText = h + ':' + m + ':' + s + ' ' + ampm;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        var currentSlide = 0;
-        var totalSlides = 3;
-        function showHeroSlide(index) {
-            var slider = document.getElementById('heroSlider');
-            if(slider) {
-                if (index >= totalSlides) currentSlide = 0;
-                else if (index < 0) currentSlide = totalSlides - 1;
-                else currentSlide = index;
-                slider.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-            }
-        }
-        function nextHeroSlide() { showHeroSlide(currentSlide + 1); }
-        function prevHeroSlide() { showHeroSlide(currentSlide - 1); }
-        setInterval(nextHeroSlide, 5000);
-
-        function openContactModal() {
-            document.getElementById('contactModal').style.display = 'flex';
-        }
-        function closeContactModal() {
-            document.getElementById('contactModal').style.display = 'none';
-        }
-
-        function playTrailer(url) {
-            document.getElementById('trailerFrame').src = url + "?autoplay=1";
-            document.getElementById('videoModal').style.display = 'flex';
-        }
-        function closeVideoModal() {
-            document.getElementById('trailerFrame').src = '';
-            document.getElementById('videoModal').style.display = 'none';
-        }
-
-        var pageData = {
-            1: [
-                { title: "তুফান (Toofan)", year: "2024", lang: "Bangla", rating: "8.8", img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NcfmOXFh1Ig" },
-                { title: "জাওয়ান (Jawan)", year: "2023", lang: "Hindi", rating: "8.4", img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/5lcGxJvOKus" },
-                { title: "পুস্পা ২ (Pushpa 2)", year: "2024", lang: "South", rating: "9.0", img: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/r588USiDBMc" },
-                { title: "কেজিএফ ২ (KGF 2)", year: "2022", lang: "South", rating: "8.7", img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/R4zMJ_T_Z_I" }
-            ],
-            2: [
-                { title: "প্রিয় মালতী", year: "2024", lang: "Bangla", rating: "8.2", img: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NcfmOXFh1Ig" },
-                { title: "অ্যানিম্যাল (Animal)", year: "2023", lang: "Hindi", rating: "8.1", img: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/Dydmpej652A" },
-                { title: "অ্যাভাটার ২ (Avatar 2)", year: "2022", lang: "English", rating: "8.9", img: "https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/d9MyW72ELq0" },
-                { title: "অ্যাভেঞ্জার্স (Endgame)", year: "2019", lang: "English", rating: "9.2", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/TcMBFSGVi1c" }
-            ],
-            3: [
-                { title: "পরাণ (Poran)", year: "2022", lang: "Bangla", rating: "8.6", img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NcfmOXFh1Ig" },
-                { title: "পাঠান (Pathaan)", year: "2023", lang: "Hindi", rating: "8.0", img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/vqu4z34wENw" },
-                { title: "আরআরআর (RRR)", year: "2022", lang: "South", rating: "8.8", img: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NgBoAI3pL0M" },
-                { title: "স্পাইডারম্যান", year: "2021", lang: "English", rating: "8.7", img: "https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/Rt_UqUm38BI" }
-            ]
-        };
-
-        function changePage(num) {
-            var grid = document.getElementById('movieGrid');
-            if(!grid) return;
-            grid.innerHTML = '';
-            var list = pageData[num] || [];
-            for (var i = 0; i < list.length; i++) {
-                var item = list[i];
-                var card = document.createElement('div');
-                card.className = 'movie-card';
-                card.setAttribute('onclick', "playTrailer('" + item.trailer + "')");
-                card.innerHTML = 
-                    '<img src="' + item.img + '" alt="' + item.title + '">' +
-                    '<div class="movie-info">' +
-                        '<h3>' + item.title + '</h3>' +
-                        '<div class="movie-meta"><span>★ ' + item.rating + '</span><span>' + item.year + ' • ' + item.lang + '</span></div>' +
-                    '</div>';
-                grid.appendChild(card);
-            }
-            document.getElementById('p1').className = num === 1 ? 'page-btn active' : 'page-btn';
-            document.getElementById('p2').className = num === 2 ? 'page-btn active' : 'page-btn';
-            document.getElementById('p3').className = num === 3 ? 'page-btn active' : 'page-btn';
-        }
-
-        function submitRequest(e) {
-            e.preventDefault();
-            var val = document.getElementById('reqInput').value;
-            alert('ধন্যবাদ! "' + val + '" মুভির রিকোয়েস্ট গ্রহণ করা হয়েছে।');
-            document.getElementById('reqInput').value = '';
-        }
-    </script>
 </body>
 </html>
