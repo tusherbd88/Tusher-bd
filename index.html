@@ -209,30 +209,6 @@
             color: #94a3b8;
         }
 
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0 10px;
-        }
-
-        .page-btn {
-            background: #0f172a;
-            color: #fff;
-            border: 1px solid #334155;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .page-btn.active {
-            background: #38bdf8;
-            color: #020617;
-            border-color: #38bdf8;
-        }
-
         /* Request Form */
         .request-section {
             background: #0f172a;
@@ -293,4 +269,240 @@
         }
 
         .close-btn {
-            
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .contact-popup-title {
+            color: #38bdf8;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e50914;
+            padding-bottom: 5px;
+        }
+
+        .contact-list { list-style: none; text-align: left; }
+
+        .contact-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-list i { color: #e50914; width: 20px; }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #4285F4;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #020617;
+            padding: 20px 5%;
+            border-top: 1px solid #1e293b;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Bar -->
+    <div class="top-bar">
+        <div class="clock-box">
+            <i class="fa-regular fa-clock"></i> <span id="liveClock">00:00:00 AM</span>
+        </div>
+        <div class="moving-movies">
+            <marquee behavior="scroll" direction="left" scrollamount="4">
+                🎬 নতুন মুভি আসছে: তুফান (Toofan) • জাওয়ান (Jawan) • পুস্পা ২ (Pushpa 2) • কেজিএফ ২ (KGF 2) • অ্যানিম্যাল (Animal) 🎥
+            </marquee>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <a href="#" class="logo">TUSHER <span>BD</span></a>
+        <ul class="nav-links">
+            <li><a href="#">হোম</a></li>
+            <li><a href="#movies">সিনেমা</a></li>
+            <li><a href="#request">রিকোয়েস্ট</a></li>
+            <li><a href="javascript:void(0)" onclick="openContactModal()">যোগাযোগ</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div>
+            <span class="badge">ট্রেন্ডিং এক্সক্লুসিভ</span>
+            <h1>তুফান (Toofan) - অফিশিয়াল ট্রেইলার</h1>
+            <p>নব্বই দশকের এক গ্যাংস্টারের উত্থান ও রাজত্বের রোমাঞ্চকর গল্প। শাকিব খান ও চঞ্চল চৌধুরীর দুর্দান্ত অ্যাকশন উপভোগ করুন!</p>
+            <button class="hero-btn" onclick="playTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')">
+                <i class="fa-solid fa-play"></i> ট্রেইলার দেখুন
+            </button>
+        </div>
+    </section>
+
+    <!-- Movie Slider Section -->
+    <main id="movies">
+        <div class="section-header">
+            <h2 class="section-title">জনপ্রিয় অফিশিয়াল মুভি কালেকশন</h2>
+            <div class="slider-controls">
+                <button class="slide-arrow" onclick="scrollSlider(-200)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slide-arrow" onclick="scrollSlider(200)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+        
+        <div class="movie-slider" id="movieSlider">
+            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/NcfmOXFh1Ig')">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80" alt="Toofan">
+                <div class="movie-info">
+                    <h3>তুফান (Toofan)</h3>
+                    <div class="movie-meta"><span>★ 8.8</span><span>2024 • Bangla</span></div>
+                </div>
+            </div>
+            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/5lcGxJvOKus')">
+                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=500&q=80" alt="Jawan">
+                <div class="movie-info">
+                    <h3>জাওয়ান (Jawan)</h3>
+                    <div class="movie-meta"><span>★ 8.4</span><span>2023 • Hindi</span></div>
+                </div>
+            </div>
+            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/r588USiDBMc')">
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80" alt="Pushpa 2">
+                <div class="movie-info">
+                    <h3>পুস্পা ২ (Pushpa 2)</h3>
+                    <div class="movie-meta"><span>★ 9.0</span><span>2024 • South</span></div>
+                </div>
+            </div>
+            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/R4zMJ_T_Z_I')">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80" alt="KGF 2">
+                <div class="movie-info">
+                    <h3>কেজিএফ ২ (KGF 2)</h3>
+                    <div class="movie-meta"><span>★ 8.7</span><span>2022 • South</span></div>
+                </div>
+            </div>
+            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/Dydmpej652A')">
+                <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80" alt="Animal">
+                <div class="movie-info">
+                    <h3>অ্যানিম্যাল (Animal)</h3>
+                    <div class="movie-meta"><span>★ 8.1</span><span>2023 • Hindi</span></div>
+                </div>
+            </div>
+            <div class="movie-card" onclick="playTrailer('https://www.youtube.com/embed/vqu4z34wENw')">
+                <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&q=80" alt="Pathaan">
+                <div class="movie-info">
+                    <h3>পাঠান (Pathaan)</h3>
+                    <div class="movie-meta"><span>★ 8.0</span><span>2023 • Hindi</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Request Form -->
+    <div class="request-section" id="request">
+        <h2>পছন্দের মুভি বা ট্রেইলার রিকোয়েস্ট করুন</h2>
+        <p style="color: #94a3b8; font-size: 13px;">আপনি যে মুভি বা ট্রেইলারটি দেখতে চান তার নাম লিখে সাবমিট করুন।</p>
+        <form class="request-form" onsubmit="submitRequest(event)">
+            <input type="text" id="reqInput" placeholder="মুভির নাম লিখুন..." required>
+            <button type="submit">পাঠান</button>
+        </form>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content" style="max-width: 700px; padding: 0; background: #000;">
+            <span class="close-btn" onclick="closeVideoModal()" style="top:-35px; right:0;">&times;</span>
+            <iframe id="trailerFrame" width="100%" height="380" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeContactModal()">&times;</span>
+            <h3 class="contact-popup-title"><i class="fa-solid fa-address-card"></i> যোগাযোগের ঠিকানা</h3>
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-location-dot"></i><div><strong>ঠিকানা:</strong><br>গয়েশপুর রথখোলা, পাবনা</div></li>
+                <li><i class="fa-solid fa-phone"></i><div><strong>ফোন:</strong><br><a href="tel:01728170476" style="color: #38bdf8; text-decoration: none;">01728170476</a></div></li>
+                <li><i class="fa-solid fa-envelope"></i><div><strong>ইমেইল:</strong><br><a href="mailto:tusherbd143@gmail.com" style="color: #38bdf8; text-decoration: none;">tusherbd143@gmail.com</a></div></li>
+            </ul>
+            <a href="https://maps.google.com/?q=Goyeshpur+Rathkhola+Pabna" target="_blank" class="map-btn">
+                <i class="fa-solid fa-map-location-dot"></i> গুগল ম্যাপে ঠিকানা দেখুন
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 <strong>Tusher BD Movie Portal</strong> | সর্বস্বত্ব সংরক্ষিত</p>
+    </footer>
+
+    <!-- Safe Script -->
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var h = now.getHours();
+            var m = now.getMinutes();
+            var s = now.getSeconds();
+            var ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12; h = h ? h : 12;
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? '0' + m : m;
+            s = s < 10 ? '0' + s : s;
+            var el = document.getElementById('liveClock');
+            if (el) el.innerText = h + ':' + m + ':' + s + ' ' + ampm;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function scrollSlider(val) {
+            var el = document.getElementById('movieSlider');
+            if(el) el.scrollBy({ left: val, behavior: 'smooth' });
+        }
+
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        function playTrailer(url) {
+            document.getElementById('trailerFrame').src = url + "?autoplay=1";
+            document.getElementById('videoModal').style.display = 'flex';
+        }
+
+        function closeVideoModal() {
+            document.getElementById('trailerFrame').src = '';
+            document.getElementById('videoModal').style.display = 'none';
+        }
+
+        function submitRequest(e) {
+            e.preventDefault();
+            var val = document.getElementById('reqInput').value;
+            alert('ধন্যবাদ! "' + val + '" মুভির রিকোয়েস্ট গ্রহণ করা হয়েছে।');
+            document.getElementById('reqInput').value = '';
+        }
+    </script>
+</body>
+</html>
