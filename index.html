@@ -102,7 +102,7 @@
         /* Hero Section */
         .hero {
             padding: 50px 5%;
-            background: linear-gradient(to right, rgba(11, 15, 25, 0.92), rgba(11, 15, 25, 0.75)), url('https://m.media-amazon.com/images/M/MV5BMjA0MTM4MTgtNDRjMC00MTRiLTgxNDctM2I0YWI1OGQxM2U1XkEyXkFqcGc@._V1_.jpg') center/cover;
+            background: linear-gradient(to right, rgba(11, 15, 25, 0.92), rgba(11, 15, 25, 0.75)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
             border-radius: 0 0 20px 20px;
         }
 
@@ -181,6 +181,7 @@
             width: 100%;
             height: 290px;
             object-fit: cover;
+            display: block;
         }
 
         .play-icon {
@@ -438,29 +439,29 @@
 
     <!-- JavaScript Engine -->
     <script>
-        // ১, ২, ৩ নম্বর পেজের আলাদা আলাদা আসল মুভি ডাটা এবং ইউটিউব অফিশিয়াল ট্রেইলার লিংক
+        // বিশ্বস্ত ডাইরেক্ট ইমেজ লিংক (Hotlink protection bypass)
         const moviesData = {
             1: [
-                { title: "তুফান (Toofan)", year: "2024", lang: "Bangla", rating: "8.8", img: "https://m.media-amazon.com/images/M/MV5BMjA0MTM4MTgtNDRjMC00MTRiLTgxNDctM2I0YWI1OGQxM2U1XkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/NcfmOXFh1Ig" },
-                { title: "জাওয়ান (Jawan)", year: "2023", lang: "Hindi", rating: "8.4", img: "https://m.media-amazon.com/images/M/MV5BOWI5NmU3NTUtOTlhNi00M2VlLTg5YzAtYzgzZDZhOWNkNWU2XkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/5lcGxJvOKus" },
-                { title: "পুস্পা ২ (Pushpa 2)", year: "2024", lang: "South", rating: "9.0", img: "https://m.media-amazon.com/images/M/MV5BNGViM2M4NmUtMmE3NC00MDM0LWFjNDItMzBiMjM3ZmE1NWZhXkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/r588USiDBMc" },
-                { title: "কেজিএফ ২ (KGF Chapter 2)", year: "2022", lang: "South", rating: "8.7", img: "https://m.media-amazon.com/images/M/MV5BMjA2MDU3NjE1N15BMl5BanBnXkFtZTgwMDUxMjA2MTE@._V1_.jpg", trailer: "https://www.youtube.com/embed/R4zMJ_T_Z_I" }
+                { title: "তুফান (Toofan)", year: "2024", lang: "Bangla", rating: "8.8", img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NcfmOXFh1Ig" },
+                { title: "জাওয়ান (Jawan)", year: "2023", lang: "Hindi", rating: "8.4", img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/5lcGxJvOKus" },
+                { title: "পুস্পা ২ (Pushpa 2)", year: "2024", lang: "South", rating: "9.0", img: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/r588USiDBMc" },
+                { title: "কেজিএফ ২ (KGF Chapter 2)", year: "2022", lang: "South", rating: "8.7", img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/R4zMJ_T_Z_I" }
             ],
             2: [
-                { title: "প্রিয় মালতী", year: "2024", lang: "Bangla", rating: "8.2", img: "https://m.media-amazon.com/images/M/MV5BNTIxOGE1NzQtY2JhNi00ODFjLTg0NTYtYWIzMDRlNTM1YTU1XkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/5U7bL7lP59c" },
-                { title: "অ্যানিম্যাল (Animal)", year: "2023", lang: "Hindi", rating: "8.1", img: "https://m.media-amazon.com/images/M/MV5BNGViM2M4NmUtMmE3NC00MDM0LWFjNDItMzBiMjM3ZmE1NWZhXkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/Dydmpej652A" },
-                { title: "অ্যাভাটার (Avatar 2)", year: "2022", lang: "English", rating: "8.9", img: "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctYzE2Yy00N1gwLTllMGEtMGJhMDNhZWZhNTlhXkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/d9MyW72ELq0" },
-                { title: "অ্যাভেঞ্জার্স (Endgame)", year: "2019", lang: "English", rating: "9.2", img: "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg", trailer: "https://www.youtube.com/embed/TcMBFSGVi1c" }
+                { title: "প্রিয় মালতী", year: "2024", lang: "Bangla", rating: "8.2", img: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/5U7bL7lP59c" },
+                { title: "অ্যানিম্যাল (Animal)", year: "2023", lang: "Hindi", rating: "8.1", img: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/Dydmpej652A" },
+                { title: "অ্যাভাটার (Avatar 2)", year: "2022", lang: "English", rating: "8.9", img: "https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/d9MyW72ELq0" },
+                { title: "অ্যাভেঞ্জার্স (Endgame)", year: "2019", lang: "English", rating: "9.2", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/TcMBFSGVi1c" }
             ],
             3: [
-                { title: "পরাণ (Poran)", year: "2022", lang: "Bangla", rating: "8.6", img: "https://m.media-amazon.com/images/M/MV5BMDRiNWE5MTctMzc3Mi00OWI3LWI4OTAtNmY5NmM0Y2NmMTgzXkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/5U7bL7lP59c" },
-                { title: "পাঠান (Pathaan)", year: "2023", lang: "Hindi", rating: "8.0", img: "https://m.media-amazon.com/images/M/MV5BM2QzM2JiNTMtOWM4ZC00MDg5LTgwM2ItNjc4ODE2N2E1OTMxXkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/vqu4z34wENw" },
-                { title: "আরআরআর (RRR)", year: "2022", lang: "South", rating: "8.8", img: "https://m.media-amazon.com/images/M/MV5BODUwNDNjYzctODUxNy00ZTA2LWIyYTEtMDc5M2JhNDU2YWQ3XkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/NgBoAI3pL0M" },
-                { title: "স্পাইডারম্যান (No Way Home)", year: "2021", lang: "English", rating: "8.7", img: "https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGc@._V1_.jpg", trailer: "https://www.youtube.com/embed/Rt_UqUm38BI" }
+                { title: "পরাণ (Poran)", year: "2022", lang: "Bangla", rating: "8.6", img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/5U7bL7lP59c" },
+                { title: "পাঠান (Pathaan)", year: "2023", lang: "Hindi", rating: "8.0", img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/vqu4z34wENw" },
+                { title: "আরআরআর (RRR)", year: "2022", lang: "South", rating: "8.8", img: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/NgBoAI3pL0M" },
+                { title: "স্পাইডারম্যান (No Way Home)", year: "2021", lang: "English", rating: "8.7", img: "https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=500&q=80", trailer: "https://www.youtube.com/embed/Rt_UqUm38BI" }
             ]
         };
 
-        // পেজভিত্তিক মুভি ডায়নামিকভাবে লোড করার ফাংশন
+        // পেজভিত্তিক মুভি লোড করা
         function loadPage(pageNumber) {
             const grid = document.getElementById('movieGrid');
             grid.innerHTML = '';
@@ -483,7 +484,7 @@
                 grid.innerHTML += cardHTML;
             });
 
-            // পেজ বাটনের একটিভ কালার আপডেট
+            // বাটন অ্যাক্টিভ ক্লাস ফিল্টার
             const buttons = document.querySelectorAll('.page-btn');
             buttons.forEach((btn, index) => {
                 if(index + 1 === pageNumber) btn.classList.add('active');
@@ -491,10 +492,9 @@
             });
         }
 
-        // পেজ ১ লোড করা
         loadPage(1);
 
-        // লাইভ ঘড়ির লজিক (ঠিক করা হয়েছে)
+        // লাইভ ক্লক
         function updateClock() {
             const now = new Date();
             let hours = now.getHours();
@@ -515,62 +515,15 @@
             }
         }
         
-        // প্রতি সেকেন্ডে সময় চালু রাখার জন্য
         window.onload = function() {
             updateClock();
             setInterval(updateClock, 1000);
         };
 
-        // ট্রেইলার প্লেয়ার চালু করা
         function openTrailer(url) {
             document.getElementById('trailerFrame').src = url + "?autoplay=1";
             document.getElementById('videoModal').style.display = 'flex';
         }
 
         function closeTrailer() {
-            document.getElementById('trailerFrame').src = '';
-            document.getElementById('videoModal').style.display = 'none';
-        }
-
-        // মুভি রিকোয়েস্ট
-        function submitRequest(e) {
-            e.preventDefault();
-            const movieName = document.getElementById('reqInput').value;
-            alert('ধন্যবাদ! "' + movieName + '" মুভির অফিশিয়াল ট্রেইলার রিকোয়েস্ট গ্রহণ করা হয়েছে।');
-            document.getElementById('reqInput').value = '';
-        }
-
-        // ল্যাঙ্গুয়েজ চেঞ্জার
-        function changeLanguage() {
-            const lang = document.getElementById('langSelect').value;
-            if(lang === 'en') {
-                document.getElementById('txtHome').innerText = "Home";
-                document.getElementById('txtMovies').innerText = "Movies";
-                document.getElementById('txtRequest').innerText = "Request";
-                document.getElementById('txtCatTitle').innerText = "Popular Official Trailers Collection";
-                document.getElementById('heroTitle').innerText = "Toofan - Official Trailer";
-                document.getElementById('heroDesc').innerText = "A story of the rise and rule of a 90s gangster featuring Shakib Khan & Chanchal Chowdhury!";
-                document.getElementById('txtReqTitle').innerText = "Request a Movie Trailer";
-                document.getElementById('txtReqDesc').innerText = "Type the name of the movie trailer you want to watch.";
-                document.getElementById('reqInput').placeholder = "Enter movie name...";
-                document.getElementById('btnSubmit').innerText = "Submit";
-                document.getElementById('txtFooter').innerText = "Connect with us on social media:";
-            } else if(lang === 'bng') {
-                document.getElementById('txtHome').innerText = "Home";
-                document.getElementById('txtMovies').innerText = "Cinema";
-                document.getElementById('txtRequest').innerText = "Request";
-                document.getElementById('txtCatTitle').innerText = "Popular Official Trailer Collection";
-                document.getElementById('heroTitle').innerText = "Toofan - Official Trailer";
-                document.getElementById('heroDesc').innerText = "90s er ek gangster er utthan o rajotter golpo. Shakib Khan o Chanchal Chowdhury!";
-                document.getElementById('txtReqTitle').innerText = "Movie Trailer Request Korun";
-                document.getElementById('txtReqDesc').innerText = "Apni je movie trailer dekhte chan tar naam likhe submit korun.";
-                document.getElementById('reqInput').placeholder = "Movie er naam likhun...";
-                document.getElementById('btnSubmit').innerText = "Pathan";
-                document.getElementById('txtFooter').innerText = "Amader sathe social media te jukto thakun:";
-            } else {
-                location.reload();
-            }
-        }
-    </script>
-</body>
-</html>
+            document.getElementById('trailerFrame
