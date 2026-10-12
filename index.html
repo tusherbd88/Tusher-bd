@@ -1,205 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tusher BD - ওয়েবসাইট তৈরি, ডিজাইন, ল্যান্ডিং পেজ ও AI অটোমেশন সেবা।">
-  <title>Tusher BD | Freelance Services</title>
-  <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-      line-height: 1.7;
-    }
-    header {
-      background: #101a33;
-      color: white;
-      padding: 18px 16px;
-      text-align: center;
-    }
-    header h2 { margin: 0; font-size: 27px; }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 12px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .hero {
-      text-align: center;
-      padding: 65px 18px;
-      color: white;
-      background: linear-gradient(135deg, #173b78, #526de5);
-    }
-    .hero h1 {
-      font-size: clamp(30px, 7vw, 44px);
-      line-height: 1.3;
-      margin: 0 0 16px;
-    }
-    .hero p { max-width: 600px; margin: 0 auto 24px; }
-    .button {
-      display: inline-block;
-      background: #16a34a;
-      color: white;
-      padding: 11px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 5px;
-    }
-    .button.blue { background: #244bb8; }
-    section { padding: 42px 16px; }
-    .container { max-width: 950px; margin: auto; }
-    .heading { text-align: center; margin-bottom: 25px; }
-    .heading h2 { font-size: 28px; margin-bottom: 5px; }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 13px;
-      box-shadow: 0 4px 18px #14213d0d;
-    }
-    .card h3 { margin-top: 0; color: #244bb8; }
-    .about { background: white; text-align: center; }
-    .contact-card {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 24px;
-      border-radius: 13px;
-      overflow-wrap: anywhere;
-    }
-    footer {
-      background: #101a33;
-      color: white;
-      text-align: center;
-      padding: 20px 12px;
-    }
-    footer p { margin: 5px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tusher BD | Digital Services</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7ff;color:#172033}
+header{background:#101936;color:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:800;color:#80f0c0}
+nav a{color:white;text-decoration:none;margin-left:16px}
+.hero{padding:65px 6%;background:linear-gradient(135deg,#101936,#3446a5);color:white}
+.hero h1{font-size:clamp(32px,6vw,55px);margin:0 0 16px}
+.hero p{font-size:17px;line-height:1.8;max-width:620px}
+.tag{color:#80f0c0;font-weight:bold}
+.wrap{max-width:1000px;margin:30px auto;padding:0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:white;border-radius:20px;padding:25px;box-shadow:0 8px 30px #1b28500d;margin-bottom:22px}
+h2{margin-top:0}
+label{display:block;font-weight:bold;margin:15px 0 7px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #d7dced;border-radius:10px;font:inherit;background:#fff}
+textarea{min-height:90px;resize:vertical}
+button{border:0;border-radius:10px;padding:14px 18px;background:#4055db;color:white;font-weight:bold;font-size:16px;cursor:pointer;width:100%;margin-top:16px}
+button:hover{background:#2c3db4}
+.result{margin-top:18px;padding:15px;border-radius:12px;background:#f0f3ff;line-height:1.8;overflow-wrap:anywhere}
+.small{color:#667085;font-size:14px;line-height:1.7}
+footer{text-align:center;padding:28px;background:#101936;color:white;margin-top:30px}
+</style>
 </head>
 <body>
 
-  <header>
-    <h2>Tusher BD</h2>
-    <nav>
-      <a href="#home">হোম</a>
-      <a href="#services">সার্ভিস</a>
-      <a href="#about">আমার পরিচয়</a>
-      <a href="#contact">যোগাযোগ</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">Tusher BD</div>
+  <nav>
+    <a href="#services">সার্ভিস</a>
+    <a href="#order">অর্ডার</a>
+    <a href="#tracking">ট্র্যাকিং</a>
+  </nav>
+</header>
 
-  <main>
-    <div class="hero" id="home">
-      <h1>আপনার ব্যবসার জন্য ডিজিটাল সমাধান</h1>
-      <p>
-        আপনার প্রয়োজন অনুযায়ী ওয়েবসাইট তৈরি,
-        সুন্দর ডিজাইন এবং ডিজিটাল অটোমেশন সেবা।
-      </p>
-      <a class="button" href="#services">আমার সার্ভিস দেখুন</a>
-      <a class="button" href="https://wa.me/8801728170476"
-         target="_blank" rel="noopener noreferrer">
-        WhatsApp-এ যোগাযোগ
-      </a>
+<section class="hero">
+  <div class="tag">YOUR DIGITAL SERVICE PARTNER</div>
+  <h1>তোমার ডিজিটাল কাজ,<br>এখন আরও সহজ।</h1>
+  <p>তোমার পছন্দের সার্ভিস বেছে নাও, অর্ডার জমা দাও এবং Tracking ID দিয়ে অর্ডারের অবস্থা দেখো।</p>
+  <a href="#order"><button style="width:auto">অর্ডার করো →</button></a>
+</section>
+
+<main class="wrap">
+  <section id="services" class="card">
+    <h2>আমাদের সার্ভিস</h2>
+    <div class="grid">
+      <div><h3>🌐 Website Design</h3><p class="small">আধুনিক ওয়েবসাইট তৈরির অনুরোধ করো।</p></div>
+      <div><h3>⚙️ Digital Solutions</h3><p class="small">তোমার ডিজিটাল কাজের জন্য অনুরোধ জমা দাও।</p></div>
     </div>
+  </section>
 
-    <section id="services">
-      <div class="container">
-        <div class="heading">
-          <h2>আমার সার্ভিসসমূহ</h2>
-          <p>আপনার প্রয়োজন অনুযায়ী সেবা বেছে নিন।</p>
-        </div>
+  <div class="grid">
+    <section id="order" class="card">
+      <h2>নতুন অর্ডার</h2>
+      <p class="small">তথ্য পূরণ করে অর্ডার জমা দাও।</p>
+      <form id="orderForm">
+        <label for="name">তোমার নাম *</label>
+        <input id="name" required autocomplete="name">
 
-        <div class="services">
-          <div class="card">
-            <h3>🌐 ওয়েবসাইট তৈরি</h3>
-            <p>ব্যক্তিগত, পোর্টফোলিও ও ছোট ব্যবসার ওয়েবসাইট।</p>
-            <a class="button" href="https://wa.me/8801728170476?text=আমি%20ওয়েবসাইট%20তৈরি%20করাতে%20চাই">অর্ডার করুন</a>
-          </div>
+        <label for="phone">ফোন নম্বর *</label>
+        <input id="phone" type="tel" required autocomplete="tel">
 
-          <div class="card">
-            <h3>🎨 ওয়েবসাইট ডিজাইন</h3>
-            <p>পরিষ্কার, আকর্ষণীয় ও মোবাইল উপযোগী ডিজাইন।</p>
-            <a class="button" href="https://wa.me/8801728170476?text=আমি%20ওয়েবসাইট%20ডিজাইন%20করাতে%20চাই">অর্ডার করুন</a>
-          </div>
+        <label for="service">সার্ভিস বেছে নাও *</label>
+        <select id="service" required>
+          <option value="">সার্ভিস নির্বাচন করো</option>
+          <option>Website Design</option>
+          <option>Digital Solutions</option>
+          <option>Other</option>
+        </select>
 
-          <div class="card">
-            <h3>📄 ল্যান্ডিং পেজ</h3>
-            <p>পণ্য, ব্যবসা বা সার্ভিস পরিচিতির জন্য ল্যান্ডিং পেজ।</p>
-            <a class="button" href="https://wa.me/8801728170476?text=আমি%20ল্যান্ডিং%20পেজ%20করাতে%20চাই">অর্ডার করুন</a>
-          </div>
+        <label for="details">কাজের বিবরণ</label>
+        <textarea id="details" placeholder="কী কাজ করাতে চাও?"></textarea>
 
-          <div class="card">
-            <h3>🤖 AI অটোমেশন</h3>
-            <p>সম্ভব হলে পুনরাবৃত্তিমূলক ডিজিটাল কাজ স্বয়ংক্রিয় করার ব্যবস্থা।</p>
-            <a class="button" href="https://wa.me/8801728170476?text=আমি%20AI%20অটোমেশন%20নিয়ে%20আলোচনা%20করতে%20চাই">আলোচনা করুন</a>
-          </div>
-
-          <div class="card">
-            <h3>🛠️ ওয়েবসাইট আপডেট ও মেরামত</h3>
-            <p>বিদ্যমান ওয়েবসাইটের লেখা, ডিজাইন ও কোডের সমস্যা ঠিক করা।</p>
-            <a class="button" href="https://wa.me/8801728170476?text=আমি%20ওয়েবসাইট%20আপডেট%20বা%20মেরামত%20করাতে%20চাই">যোগাযোগ করুন</a>
-          </div>
-        </div>
-      </div>
+        <button type="submit">অর্ডার জমা দাও</button>
+      </form>
+      <div id="orderResult" class="result" hidden></div>
     </section>
 
-    <section class="about" id="about">
-      <div class="container">
-        <div class="heading">
-          <h2>আমার পরিচয়</h2>
-          <p>
-            আমি Tusher BD। ওয়েবসাইট তৈরি, ডিজাইন এবং
-            ডিজিটাল সমাধান নিয়ে কাজ শেখা ও সেবা দেওয়ার
-            লক্ষ্যে এগিয়ে যাচ্ছি।
-          </p>
-          <p>আপনার কাজের প্রয়োজন নিয়ে আমার সঙ্গে যোগাযোগ করুন।</p>
-        </div>
-      </div>
+    <section id="tracking" class="card">
+      <h2>অর্ডার ট্র্যাকিং</h2>
+      <p class="small">তোমার Tracking ID লিখে অর্ডারের অবস্থা দেখো।</p>
+      <form id="trackForm">
+        <label for="trackingId">Tracking ID</label>
+        <input id="trackingId" placeholder="যেমন TBD1001" required>
+        <button type="submit">অর্ডার খুঁজুন</button>
+      </form>
+      <div id="trackResult" class="result" hidden></div>
     </section>
+  </div>
+</main>
 
-    <section id="contact">
-      <div class="container">
-        <div class="heading">
-          <h2>যোগাযোগ ও কাস্টমার কেয়ার</h2>
-          <p>আপনার প্রশ্ন বা কাজের বিস্তারিত জানাতে যোগাযোগ করুন।</p>
-        </div>
+<footer>
+  <strong>Tusher BD</strong>
+  <p class="small" style="color:#d7defa">Digital services made simple.</p>
+</footer>
 
-        <div class="contact-card">
-          <p><strong>ব্র্যান্ড:</strong> Tusher BD</p>
-          <p><strong>ফোন:</strong>
-            <a href="tel:+8801728170476">01728170476</a>
-          </p>
-          <p><strong>ঠিকানা:</strong> পাবনা, বাংলাদেশ</p>
-          <p><strong>সাপোর্ট:</strong> ফোন ও WhatsApp</p>
-          <a class="button" href="https://wa.me/8801728170476"
-             target="_blank" rel="noopener noreferrer">
-            কাস্টমার কেয়ারে মেসেজ দিন
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+<iframe name="submitFrame" id="submitFrame" hidden></iframe>
 
-  <footer>
-    <p>© 2026 Tusher BD. সর্বস্বত্ব সংরক্ষিত।</p>
-    <p>আপনার ডিজিটাল কাজের বিশ্বস্ত সহযোগী হওয়ার লক্ষ্য নিয়ে।</p>
-  </footer>
+<script>
+const API = "https://script.google.com/macros/s/AKfycbxfyRdICLi06cmUgZqri0HoL2KgM7g9NKUEbmxCuqP_Pl-qQa8YAuGSIp9ZpTJvPjOMEw/exec";
 
+const orderForm = document.getElementById("orderForm");
+const orderResult = document.getElementById("orderResult");
+
+orderForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const id = "TBD" + Date.now().toString().slice(-8);
+  const form = document.createElement("form");
+  form.method = "POST";
+  form.action = API;
+  form.target = "submitFrame";
+  form.hidden = true;
+
+  const values = {
+    id,
+    name: document.getElementById("name").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    service: document.getElementById("service").value,
+    details: document.getElementById("details").value.trim()
+  };
+
+  for (const key in values) {
+    const input = document.createElement("input");
+    input.name = key;
+    input.value = values[key];
+    form.appendChild(input);
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+  form.remove();
+
+  orderResult.hidden = false;
+  orderResult.innerHTML =
+    "<strong>তোমার অর্ডার পাঠানো হয়েছে।</strong><br>" +
+    "Tracking ID: <strong>" + id + "</strong><br>" +
+    "এই ID সংরক্ষণ করো। Google Sheets-এ অর্ডার জমা হয়েছে কি না যাচাই করো।";
+
+  document.getElementById("trackingId").value = id;
+  orderForm.reset();
+});
+
+document.getElementById("trackForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const id = document.getElementById("trackingId").value.trim();
+  const result = document.getElementById("trackResult");
+  result.hidden = false;
+  result.textContent = "অর্ডার খোঁজা হচ্ছে...";
+
+  const callback = "trackingCallback" + Date.now();
+
+  window[callback] = function(data) {
+    result.replaceChildren();
+
+    if (!data.found) {
+      result.textContent = "এই ID পাওয়া যায়নি। ID ঠিক আছে কি না দেখো এবং Sheets-এ অর্ডারটি আছে কি না যাচাই করো।";
+    } else {
+      const lines = [
+        ["Tracking ID", data.id],
+        ["Service", data.service],
+        ["Status", data.status],
+        ["Last Updated", data.updated]
+      ];
+
+      lines.forEach(function(item) {
+        const row = document.createElement("div");
+        const strong = document.createElement("strong");
+        strong.textContent = item[0] + ": ";
+        row.append(strong, document.createTextNode(item[1] || "-"));
+        result.appendChild(row);
+      });
+    }
+
+    delete window[callback];
+    script.remove();
+  };
+
+  const script = document.createElement("script");
+  script.src = API + "?action=track&id=" +
+    encodeURIComponent(id) + "&callback=" + callback;
+  script.onerror = function() {
+    result.textContent = "ট্র্যাকিং করা যায়নি। Apps Script deployment ও URL পরীক্ষা করো।";
+    delete window[callback];
+    script.remove();
+  };
+  document.body.appendChild(script);
+});
+</script>
 </body>
 </html>
