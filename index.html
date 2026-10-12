@@ -39,7 +39,6 @@
             align-items: center;
             font-size: 13px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
         }
 
         .clock-box {
@@ -47,7 +46,6 @@
             font-weight: 700;
             white-space: nowrap;
             font-size: 14px;
-            text-shadow: 0 0 6px rgba(255, 34, 34, 0.5);
         }
 
         .clock-box i {
@@ -57,7 +55,7 @@
 
         .moving-movies {
             flex: 1;
-            margin: 0 20px;
+            margin: 0 15px;
             overflow: hidden;
             white-space: nowrap;
             color: #38bdf8;
@@ -104,8 +102,8 @@
 
         /* Hero Banner */
         .hero {
-            padding: 40px 5%;
-            background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: 35px 5%;
+            background: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.9)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80') center/cover;
             border-bottom: 1px solid #1e293b;
         }
 
@@ -119,13 +117,13 @@
         }
 
         .hero h1 {
-            font-size: 28px;
+            font-size: 26px;
             margin: 10px 0;
             color: #fff;
         }
 
         .hero p {
-            color: #94a3b8;
+            color: #cbd5e1;
             font-size: 14px;
             margin-bottom: 15px;
         }
@@ -144,47 +142,11 @@
             gap: 6px;
         }
 
-        /* Movie Slider Section */
-        main { padding: 30px 5%; }
+        /* Horizontal Slider Main */
+        main { padding: 25px 5%; }
 
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            border-left: 4px solid var(--accent);
-            padding-left: 10px;
-            font-size: 20px;
-        }
-
-        .slider-controls {
-            display: flex;
-            gap: 8px;
-        }
-
-        .slide-arrow {
-            background: #1e293b;
-            color: #fff;
-            border: 1px solid #334155;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .slide-arrow:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
-        /* Horizontal Movie Slider Container */
-        .movie-slider-wrapper {
-            position: relative;
-            overflow
+            margin-bottom
