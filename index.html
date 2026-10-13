@@ -25,7 +25,125 @@ footer{background:#04142f;color:#e8f1ff;padding:42px 0 18px;position:relative;ov
 @media(max-width:380px){.hero h1{font-size:31px}.services{grid-template-columns:1fr}.actions .btn{width:100%}.footgrid{grid-template-columns:1fr}.footgrid>div:first-child{grid-column:auto}}
 </style>
 </head>
-<body>
+<!-- Tusher BD Chatbot -->
+<style>
+  #chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #087f5b;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 20px;
+    font-size: 16px;
+    z-index: 9999;
+  }
+
+  #chat-box {
+    display: none;
+    position: fixed;
+    right: 15px;
+    bottom: 80px;
+    width: 300px;
+    max-width: calc(100vw - 30px);
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 14px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px #0002;
+    z-index: 9999;
+    font-family: sans-serif;
+  }
+
+  #chat-messages {
+    height: 220px;
+    overflow-y: auto;
+    font-size: 14px;
+    margin: 12px 0;
+    color: #222;
+  }
+
+  #chat-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  #chat-send {
+    margin-top: 8px;
+    width: 100%;
+    padding: 10px;
+    background: #087f5b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+  }
+</style>
+
+<button id="chat-button" type="button">💬 Tusher BD Chat</button>
+
+<div id="chat-box">
+  <strong>Tusher BD সহায়তা</strong>
+  <div id="chat-messages" aria-live="polite">
+    <p>🤖 স্বাগতম! কী জানতে চান?</p>
+  </div>
+
+  <form id="chat-form">
+    <input id="chat-input"
+      placeholder="আপনার প্রশ্ন লিখুন..."
+      autocomplete="off" required>
+    <button id="chat-send" type="submit">পাঠান</button>
+  </form>
+</div>
+
+<script>
+  const chatButton = document.getElementById("chat-button");
+  const chatBox = document.getElementById("chat-box");
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
+  const chatMessages = document.getElementById("chat-messages");
+
+  chatButton.addEventListener("click", function () {
+    chatBox.style.display =
+      chatBox.style.display === "block" ? "none" : "block";
+  });
+
+  chatForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const question = chatInput.value.trim();
+    if (!question) return;
+
+    const userMessage = document.createElement("p");
+    userMessage.textContent = "আপনি: " + question;
+    chatMessages.appendChild(userMessage);
+
+    let answer =
+      "এই প্রশ্নের সঠিক উত্তর দিতে আমাদের সঙ্গে WhatsApp-এ যোগাযোগ করুন।";
+
+    const q = question.toLowerCase();
+
+    if (q.includes("অর্ডার") || q.includes("order")) {
+      answer = "অর্ডার করতে ওয়েবসাইটের অর্ডার ফর্ম ব্যবহার করুন।";
+    } else if (q.includes("যোগাযোগ") || q.includes("contact")) {
+      answer = "আমাদের ওয়েবসাইটের Contact অংশ দেখুন।";
+    } else if (q.includes("দাম") || q.includes("price")) {
+      answer = "পণ্যের দাম জানতে আমাদের সঙ্গে যোগাযোগ করুন।";
+    }
+
+    const botMessage = document.createElement("p");
+    botMessage.textContent = "Tusher BD: " + answer;
+    chatMessages.appendChild(botMessage);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    chatInput.value = "";
+  });
+</script>
+  <body>
 <header>
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Tusher BD Home"><span class="mark"></span><span>Tusher <span class="grad">BD</span><small>Your Digital Solution</small></span></a>
