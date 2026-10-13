@@ -1,337 +1,244 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#061a40">
-<title>Tusher BD | Your Digital Solution</title>
-<meta name="description" content="Tusher BD — Website Design, Graphic Design, Data Entry and Digital Services.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#061735;--navy2:#092b59;--blue:#087cff;--cyan:#00c5ed;--purple:#8b38ff;--ink:#10244b;--muted:#64748b;--line:#dce8fb;--pale:#f4f8ff}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;font-family:'Hind Siliguri',sans-serif;color:var(--ink);background:#f7f9ff;line-height:1.7}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1160px,92%);margin:auto}.grad{background:linear-gradient(100deg,#00c5ed,#087cff,#963cff);-webkit-background-clip:text;background-clip:text;color:transparent}
-header{position:sticky;top:0;z-index:30;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid #e6edfa}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:800;line-height:1.05}.mark{width:38px;height:34px;border-radius:11px;background:linear-gradient(135deg,#00c5ed,#087cff 52%,#963cff);clip-path:polygon(0 15%,100% 0,65% 32%,46% 100%,22% 100%,40% 37%,0 45%)}.brand small{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:5px}.navlinks{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:600}.navlinks a:hover{color:var(--blue)}.nav-cta{padding:9px 16px;border-radius:30px;background:var(--navy);color:white}.menubtn{display:none;border:0;background:#edf3ff;border-radius:10px;padding:7px 12px;font-size:22px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 21px;border:0;border-radius:14px;font-weight:700;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(100deg,#00bce9,#087cff,#923cff);color:white;box-shadow:0 8px 22px #347aff2a}.outline{border:1px solid #ffffffaa;color:white;background:#ffffff0b}.whitebtn{background:white;color:var(--navy)}
-.hero{position:relative;overflow:hidden;color:white;background:radial-gradient(ellipse at 82% 24%,#154c91 0,transparent 36%),radial-gradient(ellipse at 95% 90%,#532d8c 0,transparent 30%),linear-gradient(115deg,#04142f,#062957 62%,#10214e)}.hero:before{content:"";position:absolute;inset:0;opacity:.13;background-image:linear-gradient(#ffffff12 1px,transparent 1px),linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:36px 36px;pointer-events:none}.herogrid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:28px;padding:68px 0 76px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #2b82b7;background:#0c3a60aa;border-radius:40px;padding:5px 14px;font-size:13px}.dot{width:8px;height:8px;background:#00e2a1;border-radius:50%}.hero h1{font-size:clamp(34px,4.5vw,57px);line-height:1.2;margin:18px 0}.hero p{color:#dce9ff;max-width:530px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.art,.hero-art{position:relative;min-height:340px;display:grid;place-items:center}.orb{position:absolute;width:220px;height:220px;background:#098cff33;filter:blur(48px);border-radius:50%}.laptop{position:relative;width:min(420px,100%);padding:12px;border:2px solid #719bdb;border-radius:20px;background:linear-gradient(140deg,#172f56,#020b20);transform:perspective(900px) rotateY(-7deg) rotateX(3deg);box-shadow:0 30px 65px #0007,0 0 50px #188cff2b}.screen{min-height:225px;border-radius:10px;background:radial-gradient(circle at 80% 10%,#316dff66,transparent 36%),linear-gradient(135deg,#0b367c,#07162f);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.symbol{font-size:50px;color:#19c7ff;font-weight:800}.screen strong{font-size:29px}.screen small{color:#cbdcff}.base{height:15px;background:linear-gradient(#b8d4f4,#536b8d);width:112%;margin-left:-6%;border-radius:2px 2px 13px 13px}.laptop{z-index:1}
-.benefits{background:white;padding:27px 0;border-bottom:1px solid #e9effa}.benefitgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.benefit{text-align:center;padding:8px;border-right:1px solid #edf1f9}.benefit:last-child{border:0}.bicon{width:54px;height:54px;margin:0 auto 8px;border-radius:50%;display:grid;place-items:center;font-size:24px;background:#e2efff;color:#087cff}.benefit:nth-child(2) .bicon{background:#d9f9ed;color:#079a70}.benefit:nth-child(3) .bicon{background:#eee4ff;color:#823bff}.benefit:nth-child(4) .bicon{background:#fff0ce;color:#df8b00}.benefit:nth-child(5) .bicon{background:#ffe2ed;color:#e52c77}.benefit b{display:block}.benefit small{color:var(--muted);font-size:12px}
-.section{padding:62px 0}.heading{text-align:center;margin-bottom:30px}.eyebrow{color:#087cff;font-size:13px;font-weight:700}.heading h2{font-size:clamp(26px,3vw,36px);line-height:1.25;margin:7px 0}.heading p{color:var(--muted);margin:0}
-.ordergrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}.panel{border:1px solid var(--line);border-radius:22px;padding:25px;background:white;box-shadow:0 12px 35px #1b4c8b0b}.formpanel{background:linear-gradient(145deg,#f0faff,#fff 70%)}.darkpanel{position:relative;overflow:hidden;color:white;background:radial-gradient(circle at 90% 100%,#14518d 0,transparent 38%),linear-gradient(145deg,#06386a,#061735);border-color:#164f85}.paneltitle{display:flex;gap:12px;align-items:center;margin-bottom:18px}.picon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,#00bce9,#4162ff);color:white;font-size:23px;flex-shrink:0}.paneltitle h3{font-size:24px;margin:0;line-height:1.2}.paneltitle p{margin:4px 0 0;color:var(--muted);font-size:13px}.darkpanel .paneltitle p{color:#cbdcff}.field{margin:13px 0}.field label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid #d5e2f5;border-radius:11px;padding:12px 13px;background:white;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#278cff;box-shadow:0 0 0 3px #278cff18}.field textarea{resize:vertical;min-height:76px}.full{width:100%}.note{font-size:12px;color:var(--muted);margin-top:10px}.statusmsg{font-size:14px;margin-top:12px;overflow-wrap:anywhere}.statusmsg:empty{display:none}.trackrow{display:flex;gap:8px;margin:24px 0 18px}.trackrow input{min-width:0;flex:1;border:0;border-radius:12px;padding:13px;background:white;color:var(--ink)}.trackresult{padding:16px;background:#ffffff12;border:1px solid #ffffff1c;border-radius:14px;min-height:70px;color:#eaf4ff}.trackresult b{color:white}.tracktips{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}.tip{flex:1;min-width:95px;background:#ffffff12;border-radius:12px;padding:12px;text-align:center;font-size:12px}.tip strong{display:block;font-size:20px;color:#4ed8ff}
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{background:white;border:1px solid var(--line);border-radius:17px;padding:21px;transition:.25s}.service:hover{transform:translateY(-5px);box-shadow:0 14px 35px #1b4c8b12;border-color:#a9ccff}.sicon{width:46px;height:46px;border-radius:14px;background:#e4edff;color:#2468ed;display:grid;place-items:center;font-size:23px}.service:nth-child(2) .sicon{background:#ffe5f0;color:#e52c77}.service:nth-child(3) .sicon{background:#d8f8ed;color:#06986d}.service:nth-child(4) .sicon{background:#fff0d5;color:#dc8a00}.service h3{margin:12px 0 4px;font-size:18px}.service p{margin:0;color:var(--muted);font-size:13px}.service a{display:inline-block;color:#087cff;font-weight:700;font-size:13px;margin-top:12px}
-.whybox{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center;border-radius:24px;padding:28px;background:linear-gradient(115deg,#e6f4ff,#f4f0ff);border:1px solid #d7e8ff}.whyvisual{min-height:190px;border-radius:18px;background:radial-gradient(circle at 80% 15%,#7bdfff 0,transparent 28%),linear-gradient(135deg,#0b4b94,#071a3e);color:white;display:grid;place-items:center;text-align:center;padding:20px}.whyvisual .big{font-size:50px}.whybox h2{font-size:27px;line-height:1.3;margin:5px 0 10px}.whybox p{color:var(--muted)}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.checks span{font-size:14px}.checks span:before{content:'✓';color:#087cff;font-weight:800;margin-right:8px}
-footer{background:#04142f;color:#e8f1ff;padding:42px 0 18px;position:relative;overflow:hidden}footer:before{content:"";position:absolute;width:360px;height:220px;right:-100px;top:-140px;background:#1643c6;filter:blur(80px);border-radius:50%}.footgrid{position:relative;display:grid;grid-template-columns:1.2fr 1fr .8fr 1fr;gap:28px}.footbrand{color:white}.footbrand small{color:#b7c8e5}.footcol h4{margin:0 0 10px;color:white}.footcol p,.footcol a{font-size:13px;color:#c0cee5}.footcol a{display:block;margin:5px 0}.footcol a:hover{color:#4ed8ff}.copyright{position:relative;border-top:1px solid #ffffff20;margin-top:28px;padding-top:15px;text-align:center;color:#9eb2d4;font-size:12px}
-@media(max-width:850px){.navlinks{gap:13px;font-size:13px}.herogrid{grid-template-columns:1fr 0.9fr}.hero h1{font-size:38px}.services{grid-template-columns:repeat(2,1fr)}.footgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:650px){.hero-art{min-height:245px;margin-top:12px}.nav{min-height:65px}.brand{font-size:21px}.mark{width:32px;height:30px}.menubtn{display:block}.navlinks{display:none;position:absolute;top:65px;left:0;right:0;background:white;padding:16px 5% 20px;box-shadow:0 15px 25px #0b28551a;align-items:stretch;flex-direction:column;gap:0}.navlinks.open{display:flex}.navlinks a{padding:10px 0;border-bottom:1px solid #edf2fa}.nav-cta{text-align:center;margin-top:10px}.herogrid{grid-template-columns:1fr;padding:48px 0 38px;gap:10px}.hero h1{font-size:36px}.hero p{font-size:14px}.hero-art{min-height:270px}.laptop{width:82%}.screen{min-height:170px}.screen strong{font-size:23px}.float{padding:8px 10px}.f1{left:0}.f2{right:0}.f3{left:3%}.benefitgrid{grid-template-columns:repeat(2,1fr);gap:14px}.benefit{border:0;border-bottom:1px solid #edf1f9;padding-bottom:14px}.benefit:last-child{grid-column:1/-1}.section{padding:45px 0}.ordergrid{grid-template-columns:1fr;gap:17px}.panel{padding:20px}.paneltitle h3{font-size:22px}.trackrow{flex-direction:column}.services{grid-template-columns:1fr 1fr;gap:11px}.service{padding:15px}.service h3{font-size:16px}.whybox{grid-template-columns:1fr;padding:18px;gap:16px}.whyvisual{min-height:140px}.checks{grid-template-columns:1fr}.footgrid{grid-template-columns:1fr 1fr;gap:22px}.footgrid>div:first-child{grid-column:1/-1}}
-@media(max-width:380px){.hero h1{font-size:31px}.services{grid-template-columns:1fr}.actions .btn{width:100%}.footgrid{grid-template-columns:1fr}.footgrid>div:first-child{grid-column:auto}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tusher BD - Your Digital Solution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css"> <!-- আপনার CSS ফাইল লিঙ্ক -->
 </head>
-<!-- Tusher BD Chatbot -->
-<style>
-  #chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #087f5b;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 14px 20px;
-    font-size: 16px;
-    z-index: 9999;
-  }
+<body>
 
-  #chat-box {
-    display: none;
-    position: fixed;
-    right: 15px;
-    bottom: 80px;
-    width: 300px;
-    max-width: calc(100vw - 30px);
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 14px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 20px #0002;
-    z-index: 9999;
-    font-family: sans-serif;
-  }
-
-  #chat-messages {
-    height: 220px;
-    overflow-y: auto;
-    font-size: 14px;
-    margin: 12px 0;
-    color: #222;
-  }
-
-  #chat-input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-
-  #chat-send {
-    margin-top: 8px;
-    width: 100%;
-    padding: 10px;
-    background: #087f5b;
-    color: white;
-    border: none;
-    border-radius: 8px;
-  }
-</style>
-
-<button id="chat-button" type="button">💬 Tusher BD Chat</button>
-
-<div id="chat-box">
-  <strong>Tusher BD সহায়তা</strong>
-  <div id="chat-messages" aria-live="polite">
-    <p>🤖 স্বাগতম! কী জানতে চান?</p>
+  <!-- AI Helper Assistant Widget Badge -->
+  <div class="ai-assistant-badge" onclick="toggleAIChat()">
+    <strong>Tusher BD সহায়তা</strong>
+    <div aria-live="polite">
+      <p>🤖 স্বাগতম! কী জানতে চান?</p>
+    </div>
   </div>
 
-  <form id="chat-form">
-    <input id="chat-input"
-      placeholder="আপনার প্রশ্ন লিখুন..."
-      autocomplete="off" required>
-    <button id="chat-send" type="submit">পাঠান</button>
-  </form>
-</div>
-
-<script>
-  const chatButton = document.getElementById("chat-button");
-  const chatBox = document.getElementById("chat-box");
-  const chatForm = document.getElementById("chat-form");
-  const chatInput = document.getElementById("chat-input");
-  const chatMessages = document.getElementById("chat-messages");
-
-  chatButton.addEventListener("click", function () {
-    chatBox.style.display =
-      chatBox.style.display === "block" ? "none" : "block";
-  });
-
-  chatForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const question = chatInput.value.trim();
-    if (!question) return;
-
-    const userMessage = document.createElement("p");
-    userMessage.textContent = "আপনি: " + question;
-    chatMessages.appendChild(userMessage);
-
-    let answer =
-      "এই প্রশ্নের সঠিক উত্তর দিতে আমাদের সঙ্গে WhatsApp-এ যোগাযোগ করুন।";
-
-    const q = question.toLowerCase();
-
-    if (q.includes("অর্ডার") || q.includes("order")) {
-      answer = "অর্ডার করতে ওয়েবসাইটের অর্ডার ফর্ম ব্যবহার করুন।";
-    } else if (q.includes("যোগাযোগ") || q.includes("contact")) {
-      answer = "আমাদের ওয়েবসাইটের Contact অংশ দেখুন।";
-    } else if (q.includes("দাম") || q.includes("price")) {
-      answer = "পণ্যের দাম জানতে আমাদের সঙ্গে যোগাযোগ করুন।";
-    }
-
-    const botMessage = document.createElement("p");
-    botMessage.textContent = "Tusher BD: " + answer;
-    chatMessages.appendChild(botMessage);
-
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-    chatInput.value = "";
-  });
-</script>
-  <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="Tusher BD Home"><span class="mark"></span><span>Tusher <span class="grad">BD</span><small>Your Digital Solution</small></span></a>
-    <button class="menubtn" id="menuBtn" aria-label="মেনু খুলুন" aria-expanded="false">☰</button>
-    <nav class="navlinks" id="navLinks">
-      <a href="#home">হোম</a><a href="#services">সেবা সমূহ</a><a href="#why">কেন আমরা</a><a href="#order">অর্ডার করুন</a><a href="#tracking">ট্র্যাকিং</a>
-      <a class="nav-cta" id="navWhatsapp" href="https://wa.me/8801728170476" target="_blank" rel="noopener">◉ WhatsApp</a>
-    </nav>
-  </div>
-</header>
-<main>
-<section class="hero" id="home">
-  <div class="wrap herogrid">
+  <!-- Header Section -->
+  <header>
     <div>
-      <span class="pill"><span class="dot"></span> বিশ্বস্ততা · দ্রুত · নিরাপদ</span>
-      <h1>আপনার ডিজিটাল কাজের<br>বিশ্বস্ত পার্টনার<br><span class="grad">Tusher BD</span></h1>
-      <p>ওয়েব ডিজাইন, গ্রাফিক ডিজাইন, ডাটা এন্ট্রি ও ডিজিটাল সার্ভিস—আপনার প্রয়োজনীয় কাজ সহজভাবে সম্পন্ন করার জন্য আমরা আছি পাশে।</p>
-      <div class="actions"><a class="btn primary" href="#order">➤ অর্ডার করুন　→</a><a class="btn outline" href="#services">✦ সেবাসমূহ দেখুন</a></div>
+      <a aria-label="Tusher BD Home" href="#home">
+        <span></span>
+        <span>Tusher <span>BD</span><small>Your Digital Solution</small></span>
+      </a>
+      
+      <nav>
+        <a href="#home">হোম</a>
+        <a href="#services">সেবা সমূহ</a>
+        <a href="#why">কেন আমরা</a>
+        <a href="#order">অর্ডার করুন</a>
+        <a href="#tracking">ট্র্যাকিং</a>
+        <a href="https://wa.me/8801728170476" rel="noopener" target="_blank">◉ WhatsApp</a>
+      </nav>
     </div>
-    <div class="hero-art">
-      <div class="orb"></div>
-      <div class="laptop"><div class="screen"><div class="symbol">T</div><strong>Tusher BD</strong><small>Your Digital Solution</small><div style="margin-top:17px;color:#7ce7ff;font-size:13px">DESIGN&nbsp; • &nbsp;BUILD&nbsp; • &nbsp;GROW</div></div><div class="base"></div></div>
-    </div>
-  </div>
-</section>
-<section class="benefits"><div class="wrap benefitgrid">
-  <div class="benefit"><div class="bicon">ϟ</div><b>দ্রুত ডেলিভারি</b><small>সময়মতো কাজ সম্পন্ন</small></div>
-  <div class="benefit"><div class="bicon">⬡</div><b>নিরাপদ লেনদেন</b><small>তথ্যের গোপনীয়তা</small></div>
-  <div class="benefit"><div class="bicon">♧</div><b>সহায়তা</b><small>প্রয়োজনে যোগাযোগ</small></div>
-  <div class="benefit"><div class="bicon">★</div><b>মানসম্মত কাজ</b><small>বিস্তারিত যত্নসহকারে</small></div>
-  <div class="benefit"><div class="bicon">♡</div><b>গ্রাহক সন্তুষ্টি</b><small>আপনার সন্তুষ্টিই লক্ষ্য</small></div>
-</div></section>
-<section class="section" id="order">
-  <div class="wrap ordergrid">
-    <div class="panel formpanel">
-      <div class="paneltitle"><div class="picon">🛒</div><div><h3>অর্ডার করুন</h3><p>আপনার কাজের বিবরণ দিন, আমরা যোগাযোগ করব।</p></div></div>
-      <form id="orderForm">
-        <div class="field"><label for="customerName">আপনার নাম *</label><input id="customerName" name="name" placeholder="আপনার পুরো নাম" required maxlength="100"></div>
-        <div class="field"><label for="customerPhone">ফোন নম্বর *</label><input id="customerPhone" name="phone" type="tel" placeholder="যে নম্বরে যোগাযোগ করা যাবে" required maxlength="30"></div>
-        <div class="field"><label for="service">সেবা নির্বাচন করুন *</label><select id="service" name="service" required><option value="">সেবা নির্বাচন করুন</option><option>Website Design</option><option>Graphic Design</option><option>Data Entry</option><option>Social Media Management</option><option>AI Automation</option><option>Other Digital Service</option></select></div>
-        <div class="field"><label for="details">কাজের বিবরণ (ঐচ্ছিক)</label><textarea id="details" name="details" placeholder="আপনার কী ধরনের কাজ দরকার?"></textarea></div>
-        <button class="btn primary full" id="submitOrder" type="submit">➤ অর্ডার জমা দিন</button>
-        <div class="note">🔒 আপনার দেওয়া তথ্য শুধু অর্ডার পরিচালনার জন্য ব্যবহার করা হবে।</div>
-        <div class="statusmsg" id="orderMessage" role="status" aria-live="polite"></div>
-      </form>
-    </div>
-    <div class="panel darkpanel" id="tracking">
-      <div class="paneltitle"><div class="picon">⌖</div><div><h3>অর্ডার ট্র্যাকিং</h3><p>আপনার অর্ডারের বর্তমান অবস্থা জানতে Tracking ID দিন।</p></div></div>
-      <form id="trackForm">
-        <div class="trackrow"><input id="trackId" name="id" placeholder="ট্র্যাকিং আইডি (যেমন: TBD12345678)" required autocomplete="off"><button class="btn primary" type="submit">⌕ ট্র্যাকিং করুন</button></div>
-      </form>
-      <div class="trackresult" id="trackResult" role="status" aria-live="polite">আপনার Tracking ID লিখে ট্র্যাকিং করুন।</div>
-      <div class="tracktips"><div class="tip"><strong>▣</strong>অর্ডার স্ট্যাটাস</div><div class="tip"><strong>◫</strong>স্ট্যাটাস আপডেট</div><div class="tip"><strong>⌖</strong>দ্রুত তথ্য</div></div>
-    </div>
-  </div>
-</section>
-<section class="section" id="services" style="padding-top:12px">
-  <div class="wrap">
-    <div class="heading"><span class="eyebrow">আমাদের সেবা সমূহ</span><h2>আপনার প্রয়োজন অনুযায়ী <span class="grad">বেছে নিন</span></h2><p>আপনার ডিজিটাল কাজের জন্য সহজ ও নির্ভরযোগ্য সমাধান।</p></div>
-    <div class="services">
-      <article class="service"><div class="sicon">▣</div><h3>ওয়েব ডিজাইন</h3><p>আধুনিক ও মোবাইল-ফ্রেন্ডলি ওয়েবসাইট তৈরি।</p><a href="#order" data-service="Website Design">অর্ডার করুন →</a></article>
-      <article class="service"><div class="sicon">✎</div><h3>গ্রাফিক ডিজাইন</h3><p>লোগো, ব্যানার ও সোশ্যাল মিডিয়া ডিজাইন।</p><a href="#order" data-service="Graphic Design">অর্ডার করুন →</a></article>
-      <article class="service"><div class="sicon">▤</div><h3>ডাটা এন্ট্রি</h3><p>ডাটা সাজানো, স্প্রেডশিট ও অনলাইন তথ্য ব্যবস্থাপনা।</p><a href="#order" data-service="Data Entry">অর্ডার করুন →</a></article>
-      <article class="service"><div class="sicon">◉</div><h3>সোশ্যাল মিডিয়া</h3><p>কনটেন্ট পরিকল্পনা ও পেজ পরিচালনায় সহায়তা।</p><a href="#order" data-service="Social Media Management">অর্ডার করুন →</a></article>
-    </div>
-  </div>
-</section>
-<section class="section" id="why" style="padding-top:0">
-  <div class="wrap whybox">
-    <div class="whyvisual"><div><div class="big">✦</div><h3>Big Dreams.<br>Better Results.</h3><span>Let's build something great.</span></div></div>
-    <div><span class="eyebrow">কেন Tusher BD?</span><h2>আপনার সাফল্যই <span class="grad">আমাদের লক্ষ্য</span></h2><p>আপনার প্রয়োজন বুঝে সহজ, পরিচ্ছন্ন ও ব্যবহারবান্ধব ডিজিটাল সমাধান দেওয়ার চেষ্টা করি।</p><div class="checks"><span>আধুনিক ও পরিচ্ছন্ন ডিজাইন</span><span>মোবাইল-ফ্রেন্ডলি লেআউট</span><span>দ্রুত ও সহজ যোগাযোগ</span><span>অর্ডার ট্র্যাকিং সুবিধা</span></div><div style="margin-top:20px"><a class="btn primary" href="#order">কাজ শুরু করুন →</a></div></div>
-  </div>
-</section>
-</main>
-<footer>
-  <div class="wrap">
-    <div class="footgrid">
-      <div><a class="brand footbrand" href="#home"><span class="mark"></span><span>Tusher BD<small>Your Digital Solution</small></span></a><p style="font-size:13px;color:#b7c8e5">আপনার ডিজিটাল কাজের বিশ্বস্ত পার্টনার।</p></div>
-      <div class="footcol"><h4>যোগাযোগ</h4><p>📱 WhatsApp: <a href="https://wa.me/8801728170476" target="_blank" rel="noopener">01728170476</a></p><p>✉️ ইমেইল: <a href="mailto:play01728170476@gmail.com">play01728170476@gmail.com</a></p></div>
-      <div class="footcol"><h4>দ্রুত লিংক</h4><a href="#home">হোম</a><a href="#services">সেবাসমূহ</a><a href="#order">অর্ডার করুন</a><a href="#tracking">ট্র্যাকিং</a></div>
-      <div class="footcol"><h4>আমাদের সাথে থাকুন</h4><p>Facebook · YouTube · Instagram</p><a href="#order">আপনার প্রজেক্ট শুরু করুন →</a></div>
-    </div>
-    <div class="copyright">© <span id="year"></span> Tusher BD. All rights reserved. · Made with ♥ for your success.</div>
-  </div>
-</footer>
-<!-- Hidden frame allows cross-origin form submission to Apps Script -->
-<iframe name="orderFrame" id="orderFrame" title="Order submission" style="display:none"></iframe>
-<form id="hiddenPost" method="POST" target="orderFrame" style="display:none">
-  <input name="id"><input name="name"><input name="phone"><input name="service"><input name="details">
-</form>
-<script>
-/* Keep this URL the same as your deployed Google Apps Script Web App URL. */
-const API = 'https://script.google.com/macros/s/AKfycbx10wv-r1JsCZ8E01CHD842bZV0UKOTFDG3CMmcKOT6_6ztGCEdsOJiXnIpA9yqeCs5GA/exec';
+  </header>
 
-const $ = id => document.getElementById(id);
-$('year').textContent = new Date().getFullYear();
+  <main>
+    <!-- Hero Section -->
+    <section id="home">
+      <div>
+        <div>
+          <span><span></span> বিশ্বস্ততা · দ্রুত · নিরাপদ</span>
+          <h1>আপনার ডিজিটাল কাজের<br>বিশ্বস্ত পার্টনার<br><span>Tusher BD</span></h1>
+          <p>ওয়েব ডিজাইন, এআই অটোমেশন, গ্রাফিক ডিজাইন, ডাটা এন্ট্রি ও ডিজিটাল সার্ভিস—আপনার প্রয়োজনীয় কাজ সহজভাবে সম্পন্ন করার জন্য আমরা আছি পাশে।</p>
+          <div>
+            <a href="#order">➤ অর্ডার করুন　→</a>
+            <a href="#services">✦ সেবাসমূহ দেখুন</a>
+          </div>
+        </div>
+        <div>
+          <div></div>
+          <div>
+            <div>
+              <div>T</div>
+              <strong>Tusher BD</strong>
+              <small>Your Digital Solution</small>
+              <div>DESIGN  •  BUILD  •  GROW</div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-$('menuBtn').addEventListener('click', () => {
-  const nav = $('navLinks');
-  const open = nav.classList.toggle('open');
-  $('menuBtn').setAttribute('aria-expanded', String(open));
-});
-document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => {
-  $('navLinks').classList.remove('open');
-  $('menuBtn').setAttribute('aria-expanded', 'false');
-}));
-document.querySelectorAll('[data-service]').forEach(a => a.addEventListener('click', () => {
-  $('service').value = a.dataset.service;
-}));
+    <!-- Features Overview -->
+    <section>
+      <div>
+        <div><div>ϟ</div><b>দ্রুত ডেলিভারি</b><small>সময়মতো কাজ সম্পন্ন</small></div>
+        <div><div>⬡</div><b>নিরাপদ লেনদেন</b><small>তথ্যের গোপনীয়তা</small></div>
+        <div><div>♧</div><b>সহায়তা</b><small>প্রয়োজনে যোগাযোগ</small></div>
+        <div><div>★</div><b>মানসম্মত কাজ</b><small>বিস্তারিত যত্নসহকারে</small></div>
+        <div><div>♡</div><b>গ্রাহক সন্তুষ্টি</b><small>আপনার সন্তুষ্টিই লক্ষ্য</small></div>
+      </div>
+    </section>
 
-function makeOrderId(){
-  return 'TBD' + Date.now().toString().slice(-8);
-}
-$('orderForm').addEventListener('submit', event => {
-  event.preventDefault();
-  const name = $('customerName').value.trim();
-  const phone = $('customerPhone').value.trim();
-  const service = $('service').value;
-  const details = $('details').value.trim();
-  const msg = $('orderMessage');
-  if(!name || !phone || !service){
-    msg.textContent = 'অনুগ্রহ করে নাম, ফোন নম্বর ও সেবা পূরণ করুন।';
-    return;
-  }
-  const id = makeOrderId();
-  const form = $('hiddenPost');
-  form.action = API;
-  form.elements.id.value = id;
-  form.elements.name.value = name;
-  form.elements.phone.value = phone;
-  form.elements.service.value = service;
-  form.elements.details.value = details;
-  $('submitOrder').disabled = true;
-  $('submitOrder').textContent = 'জমা হচ্ছে…';
-  msg.textContent = 'অর্ডার পাঠানো হচ্ছে। অনুগ্রহ করে অপেক্ষা করুন…';
-  form.submit();
+    <!-- Order & Tracking Section -->
+    <section id="order">
+      <div>
+        <div>
+          <div>
+            <div>🛒</div>
+            <div>
+              <h3>অর্ডার করুন</h3>
+              <p>আপনার কাজের বিবরণ দিন, আমরা যোগাযোগ করব।</p>
+            </div>
+          </div>
 
-  // Cross-origin iframe cannot reveal the server response reliably.
-  // Do not claim the order was saved; show the generated ID and ask user to verify.
-  setTimeout(() => {
-    $('submitOrder').disabled = false;
-    $('submitOrder').textContent = '➤ অর্ডার জমা দিন';
-    msg.innerHTML = 'আপনার অর্ডার পাঠানো হয়েছে। <b>Tracking ID: ' + id + '</b><br>Google Sheet-এ অর্ডার জমা হয়েছে কি না নিশ্চিত করুন। ID ট্র্যাক করতে নিচের বক্সে দিন।';
-    $('trackId').value = id;
-    $('orderForm').reset();
-    $('trackId').value = id;
-    $('trackResult').textContent = 'অর্ডার পাঠানো হয়েছে। তথ্য দেখা না গেলে কিছুক্ষণ পর আবার চেষ্টা করুন।';
-  }, 1800);
-});
+          <!-- Order Form -->
+          <form action="#" method="POST" class="order-form">
+            <input type="text" name="name" placeholder="আপনার নাম" required />
+            <input type="tel" name="phone" placeholder="মোবাইল / WhatsApp নম্বর" required />
+            
+            <select name="service" required>
+              <option value="" disabled selected>সেবা নির্বাচন করুন</option>
+              <option value="AI Automation">🤖 এআই অটোমেশন (AI Automation & Chatbot)</option>
+              <option value="Web Design">▣ ওয়েব ডিজাইন (Web Design)</option>
+              <option value="Graphic Design">✎ গ্রাফিক ডিজাইন (Graphic Design)</option>
+              <option value="Data Entry">▤ ডাটা এন্ট্রি (Data Entry)</option>
+              <option value="Social Media">◉ সোশ্যাল মিডিয়া (Social Media Management)</option>
+            </select>
 
-$('trackForm').addEventListener('submit', event => {
-  event.preventDefault();
-  const id = $('trackId').value.trim();
-  const result = $('trackResult');
-  if(!id){result.textContent = 'অনুগ্রহ করে Tracking ID লিখুন।';return;}
-  result.textContent = 'অর্ডারের তথ্য খোঁজা হচ্ছে…';
-  const callback = 'trackingCallback_' + Date.now();
-  const old = document.getElementById('trackingScript');
-  if(old) old.remove();
-  window[callback] = data => {
-    result.textContent = '';
-    if(data && data.found){
-      const line = (label, value) => {
-        const p = document.createElement('p');
-        const b = document.createElement('b'); b.textContent = label + ': ';
-        p.appendChild(b); p.appendChild(document.createTextNode(value || '—'));
-        result.appendChild(p);
-      };
-      line('Tracking ID', data.id);
-      line('সার্ভিস', data.service);
-      line('অবস্থা', data.status);
-      if(data.updated) line('আপডেট', data.updated);
-    } else {
-      result.textContent = 'এই Tracking ID পাওয়া যায়নি। ID ঠিক আছে কি না দেখুন অথবা অর্ডার জমা হওয়ার কিছুক্ষণ পর আবার চেষ্টা করুন।';
+            <textarea name="details" rows="4" placeholder="কাজের বিস্তারিত বিবরণ লিখুন..."></textarea>
+            <button type="submit">অর্ডার জমা দিন →</button>
+          </form>
+
+        </div>
+        <div id="tracking">
+          <div>
+            <div>⌖</div>
+            <div>
+              <h3>অর্ডার ট্র্যাকিং</h3>
+              <p>আপনার অর্ডারের বর্তমান অবস্থা জানতে Tracking ID দিন।</p>
+            </div>
+          </div>
+          
+          <div aria-live="polite" role="status">আপনার Tracking ID লিখে ট্র্যাকিং করুন।</div>
+          <div>
+            <div><strong>▣</strong>অর্ডার স্ট্যাটাস</div>
+            <div><strong>◫</strong>স্ট্যাটাস আপডেট</div>
+            <div><strong>⌖</strong>দ্রুত তথ্য</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div>
+        <div>
+          <span>আমাদের সেবা সমূহ</span>
+          <h2>আপনার প্রয়োজন অনুযায়ী <span>বেছে নিন</span></h2>
+          <p>আপনার ডিজিটাল কাজের জন্য সহজ, স্মার্ট ও নির্ভরযোগ্য সমাধান।</p>
+        </div>
+        <div>
+          <!-- AI Automation Service Card -->
+          <article>
+            <div>🤖</div>
+            <h3>এআই অটোমেশন</h3>
+            <p>স্মার্ট চ্যাটবট, ওয়ার্কফ্লো অটোমেশন ও অটোমেটেড কাস্টমার সাপোর্ট সেটআপ।</p>
+            <a href="#order">অর্ডার করুন →</a>
+          </article>
+
+          <!-- Web Design Service Card -->
+          <article>
+            <div>▣</div>
+            <h3>ওয়েব ডিজাইন</h3>
+            <p>আধুনিক ও মোবাইল-ফ্রেন্ডলি ওয়েবসাইট তৈরি।</p>
+            <a href="#order">অর্ডার করুন →</a>
+          </article>
+
+          <!-- Graphic Design Service Card -->
+          <article>
+            <div>✎</div>
+            <h3>গ্রাফিক ডিজাইন</h3>
+            <p>লোগো, ব্যানার ও সোশ্যাল মিডিয়া ডিজাইন।</p>
+            <a href="#order">অর্ডার করুন →</a>
+          </article>
+
+          <!-- Data Entry Service Card -->
+          <article>
+            <div>▤</div>
+            <h3>ডাটা এন্ট্রি</h3>
+            <p>ডাটা সাজানো, স্প্রেডশিট ও অনলাইন তথ্য ব্যবস্থাপনা।</p>
+            <a href="#order">অর্ডার করুন →</a>
+          </article>
+
+          <!-- Social Media Service Card -->
+          <article>
+            <div>◉</div>
+            <h3>সোশ্যাল মিডিয়া</h3>
+            <p>কনটেন্ট পরিকল্পনা ও পেজ পরিচালনায় সহায়তা।</p>
+            <a href="#order">অর্ডার করুন →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why">
+      <div>
+        <div>
+          <div>
+            <div>✦</div>
+            <h3>Big Dreams.<br>Better Results.</h3>
+            <span>Let's build something great.</span>
+          </div>
+        </div>
+        <div>
+          <span>কেন Tusher BD?</span>
+          <h2>আপনার সাফল্যই <span>আমাদের লক্ষ্য</span></h2>
+          <p>আপনার প্রয়োজন বুঝে সহজ, পরিচ্ছন্ন ও ব্যবহারবান্ধব ডিজিটাল সমাধান দেওয়ার চেষ্টা করি।</p>
+          <div>
+            <span>এআই ও আধুনিক প্রযুক্তি</span>
+            <span>পরিচ্ছন্ন ডিজাইন</span>
+            <span>মোবাইল-ফ্রেন্ডলি লেআউট</span>
+            <span>দ্রুত ও সহজ যোগাযোগ</span>
+            <span>অর্ডার ট্র্যাকিং সুবিধা</span>
+          </div>
+          <div><a href="#order">কাজ শুরু করুন →</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div>
+      <div>
+        <div>
+          <a href="#home"><span></span><span>Tusher BD<small>Your Digital Solution</small></span></a>
+          <p>আপনার ডিজিটাল কাজের বিশ্বস্ত পার্টনার।</p>
+        </div>
+        <div>
+          <h4>যোগাযোগ</h4>
+          <p>📱 WhatsApp: <a href="https://wa.me/8801728170476" rel="noopener" target="_blank">01728170476</a></p>
+          <p>✉️ ইমেইল: <a href="mailto:tusherbd143@gmail.com">tusherbd143@gmail.com</a></p>
+        </div>
+        <div>
+          <h4>দ্রুত লিংক</h4>
+          <a href="#home">হোম</a>
+          <a href="#services">সেবাসমূহ</a>
+          <a href="#order">অর্ডার করুন</a>
+          <a href="#tracking">ট্র্যাকিং</a>
+        </div>
+        <div>
+          <h4>আমাদের সাথে থাকুন</h4>
+          <p>Facebook · YouTube · Instagram</p>
+          <a href="#order">আপনার প্রজেক্ট শুরু করুন →</a>
+        </div>
+      </div>
+      <div>© Tusher BD. All rights reserved. · Made with ♥ for your success.</div>
+    </div>
+  </footer>
+
+  <!-- Script for AI Chat Window Interactivity -->
+  <script>
+    function toggleAIChat() {
+      alert("Tusher BD AI Assistant এ স্বাগতম! শীঘ্রই লাইভ চ্যাটবট ইন্টিগ্রেশন সম্পন্ন হবে। আমাদের সরাসরি মেসেজ দিতে WhatsApp-এ ক্লিক করুন।");
     }
-    delete window[callback];
-    const s = document.getElementById('trackingScript'); if(s) s.remove();
-  };
-  const script = document.createElement('script');
-  script.id = 'trackingScript';
-  script.onerror = () => {
-    result.textContent = 'ট্র্যাকিং করা যায়নি। Apps Script deployment ও API URL পরীক্ষা করুন।';
-    delete window[callback];
-    script.remove();
-  };
-  script.src = API + '?action=track&id=' + encodeURIComponent(id) + '&callback=' + callback + '&t=' + Date.now();
-  document.body.appendChild(script);
-});
-</script>
+  </script>
 </body>
 </html>
